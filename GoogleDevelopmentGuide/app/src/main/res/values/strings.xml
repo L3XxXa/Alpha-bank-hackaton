@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GoogleDevelopmentGuide</string>
+    <string name="happy_birthday">Happy Birthday</string>
+    <string name="by_l3xxxa">By L3XxXa</string>
+    <string name="img">Img</string>
+    <string name="click_for_dice_roll">Click for dice roll</string>
+    <string name="your_result">Your result</string>
+    <string name="get_location">Get location</string>
+</resources>
