@@ -5,6 +5,6 @@ create table users(
     login varchar not null unique ,
     email varchar not null unique ,
     password varchar not null,
-    last_lat double precision not null,
-    last_lon double precision not null
+    last_lat double precision,
+    last_lon double precision
 )

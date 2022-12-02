@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(UserDto userDto) {
-        User user = userRepository.findFirstByEmailOrLogin(userDto.getLogin(), userDto.getEmail());
+        User user = userRepository.findFirstByEmailOrLogin(userDto.getEmail(), userDto.getLogin());
         return user.getPassword().equals(userDto.getPassword());
     }
 }
