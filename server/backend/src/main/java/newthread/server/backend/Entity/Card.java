@@ -12,8 +12,8 @@ import javax.persistence.*;
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String cardName;
-    String cardImage;
-    String cardNumber;
+    private Long id;
+    private String cardName;
+    private String cardImage;
+    private String cardNumber;
 }
