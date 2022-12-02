@@ -2,7 +2,9 @@ package newthread.server.backend.Mapper;
 
 import newthread.server.backend.Dto.UserDto;
 import newthread.server.backend.Entity.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserMapper {
 
     public User modelToDto(UserDto userDto){

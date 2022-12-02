@@ -17,4 +17,9 @@ public class UserController {
     public boolean register(@RequestBody UserDto userDto){
         return userService.registration(userDto);
     }
+
+    @PostMapping(value = "/login")
+    public boolean login(@RequestBody UserDto userDto){
+        return userService.login(userDto);
+    }
 }
