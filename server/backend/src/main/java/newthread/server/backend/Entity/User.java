@@ -7,9 +7,9 @@ import java.awt.Point;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String login;
-    String email;
-    String password;
-    Point lastGeo;
+    private Long id;
+    private String login;
+    private String email;
+    private String password;
+    private Point lastGeo;
 }
