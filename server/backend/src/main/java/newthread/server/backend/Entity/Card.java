@@ -16,6 +16,4 @@ public class Card {
     String cardName;
     String cardImage;
     String cardNumber;
-    @OneToOne
-    User user;
 }
