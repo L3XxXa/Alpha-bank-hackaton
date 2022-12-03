@@ -9,6 +9,8 @@ import newthread.server.backend.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -19,7 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean registration(UserDto userDto) {
         try {
-            userRepository.save(userMapper.modelToDto(userDto));
+            userRepository.save(userMapper.dtoToModel(userDto));
             return true;
         } catch (Exception e) {
             throw new UserAlreadyExists("UserAlreadyExists");
@@ -34,5 +36,11 @@ public class UserServiceImpl implements UserService {
         } else {
             throw new InvalidData("InvalidData");
         }
+    }
+
+    @Override
+    public List<UserDto> getUsers() {
+        return userMapper.modelListToDto(userRepository.findAll());
+
     }
 }
