@@ -33,9 +33,14 @@ public class UserController {
         return new SuccessResponse<>(userService.getUsers());
     }
 
-    @GetMapping(value = "/user/")
+    @GetMapping(value = "/user")
     public SuccessResponse<UserDto> getUser(@RequestParam Long id) {
         return new SuccessResponse<>(userService.getUserById(id));
+    }
+
+    @DeleteMapping(value = "/user")
+    public SuccessResponse<Boolean> deleteUser(@RequestParam Long id) {
+        return new SuccessResponse<>(userService.deleteUser(id));
     }
 
 }

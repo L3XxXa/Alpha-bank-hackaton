@@ -16,4 +16,6 @@ public interface UserService {
     UserDto getUserByLogin(String login);
 
     UserDto getUserByEmail(String email);
+
+    Boolean deleteUser(Long id);
 }
