@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController(value = "/api")
+@RestController
+@RequestMapping(value = "/api")
 public class UserController {
     @Autowired
     UserServiceImpl userService;
@@ -35,16 +36,6 @@ public class UserController {
     @GetMapping(value = "/user/")
     public SuccessResponse<UserDto> getUser(@RequestParam Long id) {
         return new SuccessResponse<>(userService.getUserById(id));
-    }
-
-    @GetMapping(value = "/user/")
-    public SuccessResponse<UserDto> getUser(@RequestParam String login) {
-        return new SuccessResponse<>(userService.getUserByLogin(login));
-    }
-
-    @GetMapping(value = "/user/")
-    public SuccessResponse<UserDto> getUserByEmail(@RequestParam String email) {
-        return new SuccessResponse<>(userService.getUserByEmail(email));
     }
 
 }
