@@ -5,15 +5,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
-import ru.nsu.hackatonapp.R
+import androidx.activity.viewModels
+import ru.nsu.hackatonapp.databinding.ActivityMainBinding
+import ru.nsu.hackatonapp.domain.Login
 import ru.nsu.hackatonapp.utils.LogTags
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private val loginViewModel: Login by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         askForPermission()
+        binding.loginButton.setOnClickListener{
+
+        }
     }
 
     private fun askForPermission() {

@@ -3,6 +3,7 @@
     <string name="e_mail">e-mail</string>
     <string name="password">password</string>
     <string name="login">Login</string>
-    <string name="new_acc">New?</string>
+    <string name="new_acc">Not registered?</string>
     <string name="create_account">Create account</string>
+    <string name="visible">Visible</string>
 </resources>
