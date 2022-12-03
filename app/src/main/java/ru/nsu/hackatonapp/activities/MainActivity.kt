@@ -9,6 +9,7 @@ import ru.nsu.hackatonapp.R
 import ru.nsu.hackatonapp.utils.LogTags
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
