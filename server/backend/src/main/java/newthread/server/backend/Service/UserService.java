@@ -12,4 +12,8 @@ public interface UserService {
     List<UserDto> getUsers();
 
     UserDto getUserById(Long id);
+
+    UserDto getUserByLogin(String login);
+
+    UserDto getUserByEmail(String email);
 }

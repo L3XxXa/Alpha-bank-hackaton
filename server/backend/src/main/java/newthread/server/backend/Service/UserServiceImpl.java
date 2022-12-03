@@ -53,4 +53,22 @@ public class UserServiceImpl implements UserService {
             throw new NotFound("Not found");
         }
     }
+
+    @Override
+    public UserDto getUserByLogin(String login) {
+        try {
+            return userMapper.modelToDto(userRepository.findFirstByEmailOrLogin(null, login));
+        } catch (Exception e) {
+            throw new NotFound("Not found");
+        }
+    }
+
+    @Override
+    public UserDto getUserByEmail(String email) {
+        try {
+            return userMapper.modelToDto(userRepository.findFirstByEmailOrLogin(email, null));
+        } catch (Exception e) {
+            throw new NotFound("Not found");
+        }
+    }
 }

@@ -1,7 +1,9 @@
 package newthread.server.backend.Controller;
 
 
+import com.sun.net.httpserver.Authenticator;
 import newthread.server.backend.Dto.UserDto;
+import newthread.server.backend.Entity.User;
 import newthread.server.backend.Service.UserService;
 import newthread.server.backend.Service.UserServiceImpl;
 import newthread.server.backend.Utils.SuccessResponse;
@@ -33,6 +35,16 @@ public class UserController {
     @GetMapping(value = "/user/")
     public SuccessResponse<UserDto> getUser(@RequestParam Long id) {
         return new SuccessResponse<>(userService.getUserById(id));
+    }
+
+    @GetMapping(value = "/user/")
+    public SuccessResponse<UserDto> getUser(@RequestParam String login) {
+        return new SuccessResponse<>(userService.getUserByLogin(login));
+    }
+
+    @GetMapping(value = "/user/")
+    public SuccessResponse<UserDto> getUserByEmail(@RequestParam String email) {
+        return new SuccessResponse<>(userService.getUserByEmail(email));
     }
 
 }
