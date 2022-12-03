@@ -3,6 +3,7 @@ package newthread.server.backend.Service;
 import newthread.server.backend.Dto.UserDto;
 import newthread.server.backend.Entity.User;
 import newthread.server.backend.Exception.InvalidData;
+import newthread.server.backend.Exception.NotFound;
 import newthread.server.backend.Exception.UserAlreadyExists;
 import newthread.server.backend.Mapper.UserMapper;
 import newthread.server.backend.Repository.UserRepository;
@@ -42,5 +43,14 @@ public class UserServiceImpl implements UserService {
     public List<UserDto> getUsers() {
         return userMapper.modelListToDto(userRepository.findAll());
 
+    }
+
+    @Override
+    public UserDto getUserById(Long id) {
+        try {
+            return userMapper.modelToDto(userRepository.findById(id).orElseThrow());
+        } catch (Exception e) {
+            throw new NotFound("Not found");
+        }
     }
 }

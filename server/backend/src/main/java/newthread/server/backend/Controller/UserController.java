@@ -31,8 +31,8 @@ public class UserController {
     }
 
     @GetMapping(value = "/user/")
-    public SuccessResponse<UserDto> getUser(@RequestParam Long id){
-        return new SuccessResponse<>(userService.)
+    public SuccessResponse<UserDto> getUser(@RequestParam Long id) {
+        return new SuccessResponse<>(userService.getUserById(id));
     }
 
 }

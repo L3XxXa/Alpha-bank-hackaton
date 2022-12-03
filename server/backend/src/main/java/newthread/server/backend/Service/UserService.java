@@ -10,4 +10,6 @@ public interface UserService {
     boolean login(UserDto userDto);
 
     List<UserDto> getUsers();
+
+    UserDto getUserById(Long id);
 }
