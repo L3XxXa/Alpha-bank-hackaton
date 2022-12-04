@@ -13,7 +13,7 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String cardName;
-    private String cardImage;
-    private String cardNumber;
+    private String name;
+    private String image;
+    private String number;
 }
