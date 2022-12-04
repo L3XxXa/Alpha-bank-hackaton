@@ -2,8 +2,9 @@ package newthread.server.backend.Dto;
 
 import lombok.Getter;
 import lombok.Setter;
+import newthread.server.backend.Entity.Card;
 
-import java.awt.*;
+import java.util.List;
 
 
 @Getter
@@ -13,5 +14,7 @@ public class UserDto {
     String login;
     String email;
     String password;
-    Point lastGeo;
+    Double lastLat;
+    Double lastLon;
+    List<CardDto> cards;
 }
