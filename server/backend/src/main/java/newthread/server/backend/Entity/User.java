@@ -14,23 +14,22 @@ import java.util.List;
 @Setter
 @Getter
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String login;
-    private String email;
-    private String password;
-    private Double lastLon;
-    private Double lastLat;
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.EAGER
     )
-            @JoinTable(name="cards",
+    @JoinTable(name = "cards",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "id"))
     List<Card> cards = new ArrayList<>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String email;
+    private String password;
+    private Double lastLon;
+    private Double lastLat;
 
     public void addCard(Card card) {
         cards.add(card);

@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(UserDto userDto) {
-        User user = userRepository.findFirstByEmailOrLogin(userDto.getEmail(), userDto.getLogin());
+        User user = userRepository.findFirstByEmail(userDto.getEmail());
         if (user.getPassword().equals(userDto.getPassword())) {
             return true;
         } else {
@@ -49,24 +49,6 @@ public class UserServiceImpl implements UserService {
     public UserDto getUserById(Long id) {
         try {
             return userMapper.modelToDto(userRepository.findById(id).orElseThrow());
-        } catch (Exception e) {
-            throw new NotFound("Not found");
-        }
-    }
-
-    @Override
-    public UserDto getUserByLogin(String login) {
-        try {
-            return userMapper.modelToDto(userRepository.findFirstByEmailOrLogin(null, login));
-        } catch (Exception e) {
-            throw new NotFound("Not found");
-        }
-    }
-
-    @Override
-    public UserDto getUserByEmail(String email) {
-        try {
-            return userMapper.modelToDto(userRepository.findFirstByEmailOrLogin(email, null));
         } catch (Exception e) {
             throw new NotFound("Not found");
         }
