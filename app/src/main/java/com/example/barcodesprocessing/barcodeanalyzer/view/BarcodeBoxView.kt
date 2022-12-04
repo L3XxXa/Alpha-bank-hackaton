@@ -1,4 +1,4 @@
-package com.example.barcodesprocessing.view
+package com.example.barcodesprocessing.barcodeanalyzer.view
 
 import android.content.Context
 import android.graphics.Canvas
