@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">barcodesProcessing</string>
+    <string name="chosenext">Выберите следующее действие:</string>
+    <string name="scan">Scan</string>
+    <string name="generate">Generate</string>
+    <string name="qr">qr</string>
+    <string name="ean_13">ean13</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.barcodesprocessing.barcode
+package com.example.barcodesprocessing.barcodeanalyzer
 
 class ReceiveCode {
 

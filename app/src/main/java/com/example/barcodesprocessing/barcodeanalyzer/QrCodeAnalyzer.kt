@@ -1,4 +1,4 @@
-package com.example.barcodesprocessing.barcode
+package com.example.barcodesprocessing.barcodeanalyzer
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,7 +10,7 @@ import androidx.camera.core.ImageProxy
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
-import com.example.barcodesprocessing.view.BarcodeBoxView
+import com.example.barcodesprocessing.barcodeanalyzer.view.BarcodeBoxView
 
 class QrCodeAnalyzer(
     private val context: Context,
