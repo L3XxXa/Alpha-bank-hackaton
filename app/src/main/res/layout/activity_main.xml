@@ -41,11 +41,13 @@
         android:ems="10"
         android:padding="10dp"
         android:hint="@string/enter_e_mail"
+        android:textColorHint="@color/text_view_grey"
         android:background="@drawable/edittext_background"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"/>
 
     <!-- Error message e-mail -->
     <TextView
@@ -80,6 +82,8 @@
         android:layout_marginTop="372dp"
         android:autofillHints="no"
         android:background="@drawable/edittext_background"
+        android:textColor="@color/black"
+        android:textColorHint="@color/text_view_grey"
         android:drawableEnd="@drawable/ic_baseline_lock_24"
         android:ems="10"
         android:hint="@string/enter_password"
@@ -120,14 +124,14 @@
     <Button
         android:id="@+id/login_button"
         android:layout_width="295dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="472dp"
         android:text="@string/login"
         android:textAllCaps="false"
-        android:textSize="15sp"
-        android:background="@drawable/red_button"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

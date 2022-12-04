@@ -9,6 +9,11 @@ import androidx.activity.viewModels
 import ru.nsu.hackatonapp.databinding.ActivityMainBinding
 import ru.nsu.hackatonapp.domain.Login
 import ru.nsu.hackatonapp.utils.LogTags
+import android.view.View
+import android.widget.Toast
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -16,11 +21,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         askForPermission()
         binding.loginButton.setOnClickListener{
-
+            coroutineScope{
+                launch {
+                    val login = Login()
+                }
+            }
+            Toast.makeText(this, "asd", Toast.LENGTH_SHORT).show()
         }
     }
 
