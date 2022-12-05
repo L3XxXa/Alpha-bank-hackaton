@@ -63,4 +63,9 @@ public class UserServiceImpl implements UserService {
             throw new NotFound("Not found");
         }
     }
+
+    public boolean updateUser(UserDto userDto){
+        userRepository.save(userMapper.dtoToModel(userDto));
+        return true;
+    }
 }

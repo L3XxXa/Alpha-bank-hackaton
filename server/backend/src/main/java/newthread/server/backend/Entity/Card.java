@@ -16,4 +16,5 @@ public class Card {
     private String name;
     private String image;
     private String number;
+    private Integer priority;
 }

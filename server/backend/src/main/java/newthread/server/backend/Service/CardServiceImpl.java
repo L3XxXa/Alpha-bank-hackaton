@@ -1,6 +1,7 @@
 package newthread.server.backend.Service;
 
 import newthread.server.backend.Dto.CardDto;
+import newthread.server.backend.Dto.UserDto;
 import newthread.server.backend.Exception.NotFound;
 import newthread.server.backend.Mapper.CardMapper;
 import newthread.server.backend.Repository.CardRepository;

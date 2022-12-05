@@ -44,4 +44,16 @@ public class UserController {
                 "User was deleted");
     }
 
+    @PutMapping(value = "/user")
+    public BaseResponse<Boolean> updateUser(@RequestBody UserDto userDto) {
+        return new BaseResponse<>(userService.updateUser(userDto),
+                "User was updated");
+    }
+
+    @PutMapping(value = "/user/refresh")
+    public BaseResponse<Boolean> refreshCards(@RequestBody UserDto userDto) {
+        return new BaseResponse<>(true,
+                "Cards were refreshed");
+    }
+
 }
