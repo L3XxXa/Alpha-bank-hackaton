@@ -22,6 +22,8 @@ public class UserMapper {
 
     public UserDto modelToDto(User user) {
         UserDto dto = new UserDto();
+        dto.setLastLat(user.getLastLat());
+        dto.setLastLon(user.getLastLon());
         dto.setEmail(user.getEmail());
         dto.setId(user.getId());
         dto.setPassword(user.getPassword());

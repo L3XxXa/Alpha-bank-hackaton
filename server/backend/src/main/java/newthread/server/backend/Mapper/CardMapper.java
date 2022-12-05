@@ -16,6 +16,7 @@ public class CardMapper {
         dto.setImage(card.getImage());
         dto.setNumber(card.getNumber());
         dto.setName(card.getName());
+        dto.setPriority(card.getPriority());
         return dto;
     }
 
@@ -34,5 +35,13 @@ public class CardMapper {
         card.setImage(dto.getImage());
         card.setNumber(dto.getNumber());
         return card;
+    }
+
+    public List<Card> dtoListToModel(Iterable<CardDto> dtos) {
+        List<Card> cards = new ArrayList<>();
+        for (CardDto dto : dtos) {
+            cards.add(dtoToModel(dto));
+        }
+        return cards;
     }
 }
