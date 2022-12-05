@@ -5,10 +5,9 @@ import newthread.server.backend.Dto.CardDto;
 import newthread.server.backend.Service.CardServiceImpl;
 import newthread.server.backend.Utils.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -21,4 +20,11 @@ public class CardController {
         return new BaseResponse<>(cardService.addCard(dto),
                 "Card was added to your pocket");
     }
+
+    @GetMapping("/cards")
+    public BaseResponse<List<CardDto>> getCards() {
+        return new BaseResponse<>(cardService.getAllCards(),
+                "All cards was printed");
+    }
+
 }

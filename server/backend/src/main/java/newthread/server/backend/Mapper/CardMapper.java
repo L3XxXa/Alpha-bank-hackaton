@@ -19,7 +19,7 @@ public class CardMapper {
         return dto;
     }
 
-    public List<CardDto> modelListToDto(List<Card> cards) {
+    public List<CardDto> modelListToDto(Iterable<Card> cards) {
         List<CardDto> dtos = new ArrayList<>();
         for (Card card : cards) {
             dtos.add(modelToDto(card));

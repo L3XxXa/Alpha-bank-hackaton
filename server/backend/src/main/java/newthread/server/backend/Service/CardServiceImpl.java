@@ -7,6 +7,8 @@ import newthread.server.backend.Repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class CardServiceImpl implements CardService {
@@ -21,5 +23,10 @@ public class CardServiceImpl implements CardService {
         Card card = mapper.dtoToModel(dto);
         cardRepository.save(card);
         return true;
+    }
+
+    @Override
+    public List<CardDto> getAllCards() {
+        return mapper.modelListToDto(cardRepository.findAll());
     }
 }
