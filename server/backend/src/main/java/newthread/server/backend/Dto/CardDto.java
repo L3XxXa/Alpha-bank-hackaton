@@ -6,8 +6,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CardDto {
-    Long id;
-    String name;
-    String number;
-    String image;
+    private Long id;
+    private String name;
+    private String number;
+    private String image;
+
+    private Integer priority;
 }
