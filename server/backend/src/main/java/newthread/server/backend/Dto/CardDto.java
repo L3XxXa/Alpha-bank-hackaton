@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class CardDto {
     Long id;
-    String cardName;
-    String cardNumber;
-    String cardImage;
+    String name;
+    String number;
+    String image;
 }

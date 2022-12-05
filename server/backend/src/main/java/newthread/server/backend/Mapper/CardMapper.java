@@ -13,9 +13,9 @@ public class CardMapper {
     public CardDto modelToDto(Card card) {
         CardDto dto = new CardDto();
         dto.setId(card.getId());
-        dto.setCardImage(card.getImage());
-        dto.setCardNumber(card.getNumber());
-        dto.setCardName(card.getName());
+        dto.setImage(card.getImage());
+        dto.setNumber(card.getNumber());
+        dto.setName(card.getName());
         return dto;
     }
 
@@ -30,9 +30,9 @@ public class CardMapper {
     public Card dtoToModel(CardDto dto) {
         Card card = new Card();
         card.setId(dto.getId());
-        card.setName(dto.getCardNumber());
-        card.setImage(dto.getCardImage());
-        card.setNumber(dto.getCardNumber());
+        card.setName(dto.getNumber());
+        card.setImage(dto.getImage());
+        card.setNumber(dto.getNumber());
         return card;
     }
 }
