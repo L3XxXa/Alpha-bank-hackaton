@@ -35,4 +35,12 @@ public class CardMapper {
         card.setNumber(dto.getNumber());
         return card;
     }
+
+    public List<Card> dtoListToModel(Iterable<CardDto> dtos) {
+        List<Card> cards = new ArrayList<>();
+        for (CardDto dto : dtos) {
+            cards.add(dtoToModel(dto));
+        }
+        return cards;
+    }
 }
