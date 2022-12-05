@@ -7,17 +7,14 @@ import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import ru.nsu.hackatonapp.databinding.ActivityMainBinding
-import ru.nsu.hackatonapp.domain.Login
 import ru.nsu.hackatonapp.utils.LogTags
-import android.view.View
 import android.widget.Toast
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import ru.nsu.hackatonapp.domain.viewmodels.LoginViewModel
+import ru.nsu.hackatonapp.network.BaseResponse
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val loginViewModel: Login by viewModels()
+    private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +22,34 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         askForPermission()
-        binding.loginButton.setOnClickListener{
-            coroutineScope{
-                launch {
-                    val login = Login()
+        loginViewModel.loginResult.observe(this) {
+            when (it) {
+                is BaseResponse.Loading -> {
+                    Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show()
+                    Log.i(LogTags.LOGIN_TAG, "Logging ...")
+                }
+                is BaseResponse.Error -> {
+                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+                    Log.e(LogTags.LOGIN_TAG, "Error while logging. ${it.msg}")
+                }
+                is BaseResponse.Success -> {
+                    Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show()
+                    Log.i(LogTags.LOGIN_TAG, "Successfully logged in")
+                }
+                else -> {
+                    Log.e(LogTags.LOGIN_TAG, "Unexpected error")
                 }
             }
-            Toast.makeText(this, "asd", Toast.LENGTH_SHORT).show()
         }
+        binding.loginButton.setOnClickListener {
+            login()
+        }
+    }
+
+    private fun login() {
+        val email = binding.loginEmail.text.toString()
+        val password = binding.loginPassword.text.toString()
+        loginViewModel.loginUser(email, password)
     }
 
     private fun askForPermission() {
@@ -54,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
         locationPermissionRequest.launch(
             arrayOf(
                 Manifest.permission.ACCESS_FINE_LOCATION,
