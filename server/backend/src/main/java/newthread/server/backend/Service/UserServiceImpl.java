@@ -1,12 +1,14 @@
 package newthread.server.backend.Service;
 
 import newthread.server.backend.Dto.UserDto;
+import newthread.server.backend.Entity.Card;
 import newthread.server.backend.Entity.User;
 import newthread.server.backend.Exception.InvalidData;
 import newthread.server.backend.Exception.NotFound;
 import newthread.server.backend.Exception.UserAlreadyExists;
 import newthread.server.backend.Mapper.CardMapper;
 import newthread.server.backend.Mapper.UserMapper;
+import newthread.server.backend.Repository.CardRepository;
 import newthread.server.backend.Repository.UserRepository;
 import newthread.server.backend.Utils.ApiConnector;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,6 +29,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     CardMapper cardMapper;
+
+    @Autowired
+    CardRepository cardRepository;
 
     @Override
     public boolean registration(UserDto userDto) {
@@ -82,7 +88,15 @@ public class UserServiceImpl implements UserService {
         var cards = user.getCards();
         Point2D userCoordinate = new Point2D.Double(user.getLastLat(), user.getLastLon());
         ApiConnector connector = new ApiConnector();
-        connector.findPoints(cards, userCoordinate);
+        List<Double> results = new ArrayList<>();
+        var map =
+                connector.findPoints(cards, userCoordinate, results);
+        for (int i = 0; i < results.size(); i++) {
+            Long curId = map.get(results.get(i));
+            Card curCard = cardRepository.findFirstById(curId);
+            curCard.setPriority(i);
+            cardRepository.save(curCard);
+        }
         return true;
     }
 

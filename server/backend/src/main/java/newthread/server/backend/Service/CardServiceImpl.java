@@ -27,7 +27,7 @@ public class CardServiceImpl implements CardService {
 
     @Override
     public List<CardDto> getAllCards() {
-        return mapper.modelListToDto(cardRepository.findAll());
+        return mapper.modelListToDto(cardRepository.findAllByOrderByPriorityAsc());
     }
 
     @Override

@@ -8,6 +8,8 @@ import newthread.server.backend.Utils.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -26,7 +28,9 @@ public class CardController {
 
     @GetMapping("/cards")
     public BaseResponse<List<CardDto>> getCards(@RequestParam Long id) {
-        return new BaseResponse<>(userService.getUserById(id).getCards(),
+        var result = userService.getUserById(id).getCards();
+        result.sort(Comparator.comparingInt(CardDto::getPriority));
+        return new BaseResponse<>(result,
                 "All cards was printed");
     }
 

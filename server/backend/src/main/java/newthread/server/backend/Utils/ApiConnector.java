@@ -6,6 +6,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import newthread.server.backend.Entity.Card;
+import newthread.server.backend.Repository.CardRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 import springfox.documentation.builders.RequestParameterBuilder;
 
 import java.awt.Point;
@@ -17,21 +21,25 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.http.HttpRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 
 public class ApiConnector {
-    public void findPoints(List<Card> cards, Point2D sortPoint) throws IOException {
+    @Autowired
+    CardRepository cardRepository;
+
+    private int notNullPointers = 0;
+
+    public Map<Double, Long> findPoints(List<Card> cards, Point2D sortPoint, List<Double> results) throws IOException {
 
         long time = System.currentTimeMillis();
+        Map<Double, Long> distanceToId = new HashMap<>();
         for (Card card : cards) {
             String name = card.getName();
             URL url = new URL("https://catalog.api.2gis.com/3.0/" +
                     "items?q=" + name +
                     "&sort_point=" + sortPoint.getY() + "," + sortPoint.getX() +
-                    "&key=KEY_API&" +
+                    "&key=ruhrcj6622&" +
                     "sort=distance&" +
                     "fields=items.point");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -45,10 +53,20 @@ public class ApiConnector {
                     response.append(line);
                 }
                 var result = parseJson(response);
-                System.out.println(result);
+                if (result != null) {
+                    Double distance = Point2D.Double.distance(result.getX(), result.getY()
+                            , sortPoint.getX(), sortPoint.getY());
+                    distanceToId.put(distance, card.getId());
+                    results.add(Math.abs(distance));
+                } else {
+                    distanceToId.put(Double.MAX_VALUE, card.getId());
+                    results.add(Double.MAX_VALUE);
+                }
+
             }
         }
-        System.out.println(System.currentTimeMillis() - time);
+        Collections.sort(results);
+        return distanceToId;
 
     }
 
@@ -66,6 +84,7 @@ public class ApiConnector {
             respData = objectMapper.writeValueAsString(respMap.get("point"));
             Map<String, Double> res = objectMapper.readValue(respData, Map.class);
             Point2D resPoint = new Point2D.Double(res.get("lat"), res.get("lon"));
+            notNullPointers++;
             return resPoint;
         } catch (Exception e) {
             System.out.println(e.getMessage());
