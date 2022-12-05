@@ -30,12 +30,4 @@ public class User {
     private String password;
     private Double lastLon;
     private Double lastLat;
-
-    public void addCard(Card card) {
-        cards.add(card);
-    }
-
-    public void removeCard(Card card) {
-        cards.remove(card);
-    }
 }

@@ -11,8 +11,4 @@ public class CardDto {
     private String number;
     private String image;
     private Integer priority;
-
-    static public int compare(CardDto first, CardDto second) {
-        return Integer.compare(first.getPriority(), second.getPriority());
-    }
 }
