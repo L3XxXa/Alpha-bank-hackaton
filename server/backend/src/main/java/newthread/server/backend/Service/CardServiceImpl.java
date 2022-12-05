@@ -21,8 +21,7 @@ public class CardServiceImpl implements CardService {
 
     @Override
     public boolean addCard(CardDto dto) {
-        Card card = mapper.dtoToModel(dto);
-        cardRepository.save(card);
+        cardRepository.save(mapper.dtoToModel(dto));
         return true;
     }
 
