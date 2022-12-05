@@ -26,4 +26,13 @@ public class CardMapper {
         }
         return dtos;
     }
+
+    public Card dtoToModel(CardDto dto) {
+        Card card = new Card();
+        card.setId(dto.getId());
+        card.setName(dto.getCardNumber());
+        card.setImage(dto.getCardImage());
+        card.setNumber(dto.getCardNumber());
+        return card;
+    }
 }
