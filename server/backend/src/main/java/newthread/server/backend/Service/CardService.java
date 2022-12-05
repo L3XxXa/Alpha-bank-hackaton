@@ -8,4 +8,6 @@ public interface CardService {
     boolean addCard(CardDto dto);
 
     List<CardDto> getAllCards();
+
+    boolean deleteCard(Long id);
 }

@@ -30,4 +30,10 @@ public class CardController {
                 "All cards was printed");
     }
 
+    @DeleteMapping("/card")
+    public BaseResponse<Boolean> deleteCard(@RequestParam Long id){
+        return new BaseResponse<>(cardService.deleteCard(id),
+                "Card with id " + id + " was deleted" );
+    }
+
 }
