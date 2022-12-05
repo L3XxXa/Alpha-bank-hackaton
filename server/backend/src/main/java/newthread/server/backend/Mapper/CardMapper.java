@@ -16,6 +16,7 @@ public class CardMapper {
         dto.setImage(card.getImage());
         dto.setNumber(card.getNumber());
         dto.setName(card.getName());
+        dto.setPriority(card.getPriority());
         return dto;
     }
 

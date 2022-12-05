@@ -1,5 +1,7 @@
 package newthread.server.backend.Utils;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import newthread.server.backend.Entity.Card;
 import springfox.documentation.builders.RequestParameterBuilder;
 
@@ -33,9 +35,16 @@ public class ApiConnector {
             try (BufferedReader in = new BufferedReader(new InputStreamReader(
                     connection.getInputStream()))) {
                 String line;
+                StringBuilder response = new StringBuilder();
                 while ((line = in.readLine()) != null) {
-                    System.out.println(line);
+                    response.append(line);
                 }
+                ObjectMapper objectMapper = new ObjectMapper();
+                Map<String, Map<String, Map<String, Map<String, Object>>>> map
+                        = objectMapper.readValue(response.toString(), new TypeReference<>() {
+                });
+
+                System.out.println(map.get("result").get("items").get("0").get("point"));
             }
         }
         System.out.println(System.currentTimeMillis() - time);

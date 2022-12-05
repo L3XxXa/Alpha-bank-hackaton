@@ -6,6 +6,7 @@ import newthread.server.backend.Utils.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -50,9 +51,9 @@ public class UserController {
                 "User was updated");
     }
 
-    @PutMapping(value = "/user/refresh")
-    public BaseResponse<Boolean> refreshCards(@RequestBody UserDto userDto) {
-        return new BaseResponse<>(true,
+    @GetMapping(value = "/user/refresh")
+    public BaseResponse<Boolean> refreshCards(@RequestParam Long id) throws IOException {
+        return new BaseResponse<>(userService.refreshCards(id),
                 "Cards were refreshed");
     }
 

@@ -77,9 +77,10 @@ public class UserServiceImpl implements UserService {
         return true;
     }
 
-    public Boolean refreshCards(UserDto userDto) throws IOException {
-        var cards = cardMapper.dtoListToModel(userDto.getCards());
-        Point2D userCoordinate = new Point2D.Double(userDto.getLastLat(), userDto.getLastLon());
+    public Boolean refreshCards(Long id) throws IOException {
+        User user = userRepository.findById(id).orElse(null);
+        var cards = user.getCards();
+        Point2D userCoordinate = new Point2D.Double(user.getLastLat(), user.getLastLon());
         ApiConnector connector = new ApiConnector();
         connector.findPoints(cards, userCoordinate);
         return true;
