@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HackatonApp</string>
+    <string name="enter_e_mail">Введите e-mail</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="login">Войти</string>
+    <string name="new_acc">или</string>
+    <string name="create_account">Зарегистрироваться</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="visible">Visible</string>
+    <string name="logo">logo</string>
+    <string name="e_mail">Адрес почты</string>
+    <string name="password">Пароль</string>
+</resources>
