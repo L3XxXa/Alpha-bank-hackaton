@@ -155,6 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="548dp"
         android:text="@string/create_account"
+        android:id="@+id/register_button"
         android:textColor="@color/red"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

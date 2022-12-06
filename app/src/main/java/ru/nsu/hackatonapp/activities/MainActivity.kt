@@ -2,6 +2,7 @@ package ru.nsu.hackatonapp.activities
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -37,6 +38,14 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener {
             login()
         }
+        binding.registerButton.setOnClickListener{
+            register()
+        }
+    }
+
+    private fun register() {
+        val intent = Intent(this, RegistrationActivity::class.java)
+        startActivity(intent)
     }
 
     private fun loginObserver() {
