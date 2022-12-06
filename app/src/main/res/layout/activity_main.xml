@@ -51,17 +51,17 @@
 
     <!-- Error message e-mail -->
     <TextView
+        android:id="@+id/error_email_login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="67dp"
         android:layout_marginTop="312dp"
+        android:text="@{view}"
         android:textColor="@color/red_error"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.167"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TextView field above password EditText -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,20 +95,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!-- Login button -->
+    <!-- Wrong pswd -->
 
     <TextView
+        android:id="@+id/error_pswd_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="484dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="456dp"
         android:textColor="@color/red_error"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Forgot password? -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,30 +120,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Login button -->
+
+
     <Button
         android:id="@+id/login_button"
         android:layout_width="295dp"
         android:layout_height="60dp"
-        android:layout_marginTop="472dp"
+        android:layout_marginTop="484dp"
+        android:backgroundTint="@color/red"
         android:text="@string/login"
         android:textAllCaps="false"
-        android:textSize="16sp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="536dp"
-        android:text="@string/create_account"
-        android:textColor="@color/red"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,7 +141,7 @@
         android:id="@+id/login_create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="536dp"
+        android:layout_marginTop="548dp"
         android:text="@string/new_acc"
         android:textColor="@color/text_view_grey"
         android:textSize="16sp"
@@ -161,6 +150,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="548dp"
+        android:text="@string/create_account"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

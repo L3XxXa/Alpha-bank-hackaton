@@ -6,8 +6,9 @@
     <string name="new_acc">или</string>
     <string name="create_account">Зарегистрироваться</string>
     <string name="forgot_password">Забыли пароль?</string>
-    <string name="visible">Visible</string>
     <string name="logo">logo</string>
     <string name="e_mail">Адрес почты</string>
     <string name="password">Пароль</string>
+    <string name="enter_valid_email">Введите e-mail в верном формате</string>
+    <string name="wrong_email_or_pswd">Неправильный логин или пароль</string>
 </resources>
