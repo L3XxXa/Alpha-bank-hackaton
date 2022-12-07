@@ -8,7 +8,9 @@ group = "com.github.illiashenkoo.glide-barcode"
 android {
     compileSdk 32
     namespace 'com.example.namespace'
-
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.example.barcodesprocessing"
         minSdk 21

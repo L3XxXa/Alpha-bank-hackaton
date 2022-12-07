@@ -16,12 +16,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_chose)
 
         //button to start barcode scanner activity
-        findViewById<Button>(R.id.button_scan).setOnClickListener {
-            startActivity(Intent(this, BarcodeScannerActivity::class.java))
+        findViewById<Button>(R.id.button_add).setOnClickListener {
+            startActivity(Intent(this, AddCardActivity::class.java))
         }
 
-        findViewById<Button>(R.id.button2).setOnClickListener {
-            startActivity(Intent(this, Generateqr::class.java))
+        findViewById<Button>(R.id.button_show).setOnClickListener {
+            startActivity(Intent(this, GenerateqrActivity::class.java))
         }
 
     }

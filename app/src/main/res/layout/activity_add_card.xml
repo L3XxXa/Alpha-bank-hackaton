@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context="com.example.barcodesprocessing.activities.AddCardActivity">
+
+    <EditText
+        android:id="@+id/card_name"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="256dp"
+        android:autofillHints="no"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:hint="@string/example"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/text_view_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="@string/card_name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/card_name"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="56dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/alfawallet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/scan_card"
+        android:layout_width="237dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#EF3124"
+        android:text="@string/scan_card"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_name" />
+
+    <Button
+        android:id="@+id/add_card"
+        android:layout_width="237dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="128dp"
+        android:backgroundTint="#EF3124"
+        android:text="@string/addcard"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F3F8"
+    android:background="@color/grey"
     tools:context="com.example.barcodesprocessing.activities.MainActivity">
 
 
@@ -22,11 +22,11 @@
 
 
     <Button
-        android:id="@+id/button_scan"
-        android:layout_width="145dp"
-        android:layout_height="53dp"
+        android:id="@+id/button_add"
+        android:layout_width="233dp"
+        android:layout_height="50dp"
         android:backgroundTint="#EF3124"
-        android:text="Scan"
+        android:text="Добавить карту"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -37,17 +37,18 @@
         app:layout_constraintVertical_bias="0.663" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="145dp"
-        android:layout_height="53dp"
+        android:id="@+id/button_show"
+        android:layout_width="237dp"
+        android:layout_height="52dp"
         android:backgroundTint="#EF3124"
-        android:text="Generate"
+        android:text="Показать карту"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.532" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

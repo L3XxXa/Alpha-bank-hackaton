@@ -1,6 +1,7 @@
 package com.example.barcodesprocessing.barcodeanalyzer
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.graphics.Rect
 import android.graphics.RectF
@@ -58,14 +59,11 @@ class QrCodeAnalyzer(
                             // Handle received barcodes...
                             Toast.makeText(
                                 context,
-                                "Value: " + barcode.rawValue,
-                                Toast.LENGTH_SHORT
+                                "Карта добавлена",
+                                Toast.LENGTH_LONG
                             )
                                 .show()
                             ReceiveCode.setCode(barcode.rawValue as String)
-//                            (context as Activity).finish()
-
-                            println(ReceiveCode.getCode())
                             // Update bounding rect
                             barcode.boundingBox?.let { rect ->
                                 barcodeBoxView.setRect(
@@ -84,5 +82,9 @@ class QrCodeAnalyzer(
         }
 
         image.close()
+        //finish if code is received
+        if (ReceiveCode.getCode() != null) {
+            (context as Activity).finish()
+        }
     }
 }

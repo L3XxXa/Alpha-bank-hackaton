@@ -92,7 +92,6 @@ class BarcodeScannerActivity : AppCompatActivity() {
                 .apply {
                     setCanceledOnTouchOutside(false)
                     show()
-                    println("123123123")
                 }
         }
     }
@@ -129,7 +128,6 @@ class BarcodeScannerActivity : AppCompatActivity() {
                         qrCodeAnalyzer
                     )
                 }
-            println(ReceiveCode.getCode())
 
             // Select back camera as a default
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA

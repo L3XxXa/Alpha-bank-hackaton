@@ -1,6 +1,5 @@
 package com.example.barcodesprocessing.activities
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,11 +12,10 @@ import com.example.namespace.databinding.ActivityMainBinding
 import com.google.zxing.BarcodeFormat
 
 
-class Generateqr : AppCompatActivity() {
+class GenerateqrActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -26,9 +24,11 @@ class Generateqr : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.qrValue)
         val imageView = findViewById<TextView>(R.id.qrName)
         textView.text = ReceiveCode.getCode()
-        imageView.text = "pyaterochka"
+        imageView.text = ReceiveCode.getName()
         binding.button.setOnClickListener {
-            showQr(codeVal)
+            if (codeVal != null) {
+                showQr(codeVal)
+            }
         }
     }
 
@@ -40,15 +40,5 @@ class Generateqr : AppCompatActivity() {
             .load(barcode)
             .into(binding.firstQrView)
     }
-
-
-//    private fun showEan13() {
-//        val barcode = Barcode("978020137962", BarcodeFormat.EAN_13)
-//        barcode.contentColor = ContextCompat.getColor(this, R.color.black)
-//
-//        Glide.with(this)
-//            .load(barcode)
-//            .into(binding.ean13View)
-//    }
 
 }

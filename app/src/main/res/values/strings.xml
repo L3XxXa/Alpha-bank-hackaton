@@ -7,4 +7,9 @@
     <string name="ean_13">ean13</string>
     <string name="qrvalue">value</string>
     <string name="qrName">qrName</string>
+    <string name="card_name">Название карты</string>
+    <string name="example">Хороший магазин</string>
+    <string name="logo">logo</string>
+    <string name="scan_card">Сканировать карту</string>
+    <string name="addcard">Добавить карту</string>
 </resources>

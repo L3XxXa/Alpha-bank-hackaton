@@ -6,10 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F3F8"
+    android:background="@color/grey"
     android:orientation="horizontal"
     android:padding="16dp"
-    tools:context="com.example.barcodesprocessing.activities.Generateqr">
+    tools:context="com.example.barcodesprocessing.activities.GenerateqrActivity">
 
 
     <!--        <Button-->
