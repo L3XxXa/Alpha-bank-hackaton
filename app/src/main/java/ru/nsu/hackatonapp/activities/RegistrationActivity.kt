@@ -54,14 +54,14 @@ class RegistrationActivity : AppCompatActivity() {
             }
             return
         }
-        if (!FieldValidators.checkPassword(binding.registerConfirmPassword.text.toString())){
-            displayError(binding.errorConfirmPswdRegister, getString(R.string.enter_password))
-            Log.e(LogTags.REGISTRATION, "Not password 2")
-            return
-        }
         if (!FieldValidators.checkLengthPassword(binding.registerPassword.text.toString())){
             displayError(binding.errorPswdRegister, getString(R.string.password_len))
             Log.e(LogTags.REGISTRATION, "Bad password len")
+            return
+        }
+        if (!FieldValidators.checkPassword(binding.registerConfirmPassword.text.toString())){
+            displayError(binding.errorConfirmPswdRegister, getString(R.string.enter_password))
+            Log.e(LogTags.REGISTRATION, "Not password 2")
             return
         }
         if (!FieldValidators.confirmPassword(binding.registerPassword.text.toString(), binding.registerConfirmPassword.text.toString())){
