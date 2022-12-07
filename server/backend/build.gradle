@@ -29,3 +29,12 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task customFatJar(type: Jar) {
+	manifest {
+		attributes 'Main-Class': 'newthread.server.backend.BackendApplication'
+	}
+	baseName = 'DemoFat'
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+	with jar
+}
