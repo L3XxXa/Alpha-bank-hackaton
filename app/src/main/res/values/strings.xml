@@ -14,4 +14,5 @@
     <string name="confirm_password">Повторите пароль</string>
     <string name="not_equal_passwords">Пароли не совпадают</string>
     <string name="password_len">Введите пароль длиной от 8 до 16 символов</string>
+    <string name="loading">Загрузка</string>
 </resources>

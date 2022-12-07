@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
     private fun login() {
         val email = binding.loginEmail.text.toString()
         val password = binding.loginPassword.text.toString()
-        if (!FieldValidators.checkEmail(binding.loginEmail.text.toString())){
+        if (!FieldValidators.checkEmail(email)){
             displayError(binding.errorEmailLogin, getString(R.string.enter_valid_email))
             Log.e(LogTags.LOGIN_TAG, "Not email")
-            if (!FieldValidators.checkPassword(binding.loginPassword.text.toString())){
+            if (!FieldValidators.checkPassword(password)){
                 Log.e(LogTags.LOGIN_TAG, "Not password")
                 displayError(binding.errorPswdLogin, getString(R.string.enter_password))
                 return
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         binding.errorEmailLogin.visibility = INVISIBLE
-        if (!FieldValidators.checkPassword(binding.loginPassword.text.toString())){
+        if (!FieldValidators.checkPassword(password)){
             Log.e(LogTags.LOGIN_TAG, "Not password")
             displayError(binding.errorPswdLogin, getString(R.string.enter_password))
             return

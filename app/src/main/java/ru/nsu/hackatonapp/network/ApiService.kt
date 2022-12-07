@@ -9,6 +9,7 @@ import retrofit2.http.POST
 import ru.nsu.hackatonapp.network.json.login.LoginRequestJson
 import ru.nsu.hackatonapp.network.json.login.LoginResponseJson
 import ru.nsu.hackatonapp.network.json.register.RegisterRequestJson
+import ru.nsu.hackatonapp.network.json.register.RegisterResponseJson
 
 private const val baseUrl = "https://google.com"
 
@@ -21,7 +22,7 @@ interface ApiService {
     suspend fun loginUser(@Body loginRequestJson: LoginRequestJson): Response<LoginResponseJson>
 
     @POST("/api/user/register")
-    suspend fun registerUser(@Body registerRequestJson: RegisterRequestJson): Response<RegisterRequestJson>
+    suspend fun registerUser(@Body registerRequestJson: RegisterRequestJson): Response<RegisterResponseJson>
 
 }
 
