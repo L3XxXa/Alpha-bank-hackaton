@@ -1,22 +1,20 @@
 package ru.nsu.hackatonapp.network
 
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
-import retrofit2.http.GET
 import retrofit2.http.POST
 import ru.nsu.hackatonapp.network.json.login.LoginRequestJson
 import ru.nsu.hackatonapp.network.json.login.LoginResponseJson
 import ru.nsu.hackatonapp.network.json.register.RegisterRequestJson
+import ru.nsu.hackatonapp.network.json.register.RegisterResponseJson
 
-private const val baseUrl = "https://google.com"
-private val moshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory()).build()
+private const val baseUrl = "http://192.168.43.86:8080"
+
 private val retrofit = Retrofit.Builder()
-    .addConverterFactory(MoshiConverterFactory.create(moshi))
+    .addConverterFactory(GsonConverterFactory.create())
     .baseUrl(baseUrl).build()
 
 interface ApiService {
@@ -24,7 +22,7 @@ interface ApiService {
     suspend fun loginUser(@Body loginRequestJson: LoginRequestJson): Response<LoginResponseJson>
 
     @POST("/api/user/register")
-    suspend fun registerUser(@Body registerRequestJson: RegisterRequestJson): Response<RegisterRequestJson>
+    suspend fun registerUser(@Body registerRequestJson: RegisterRequestJson): Response<RegisterResponseJson>
 
 }
 

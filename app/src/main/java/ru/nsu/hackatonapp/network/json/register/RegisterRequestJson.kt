@@ -1,4 +1,5 @@
 package ru.nsu.hackatonapp.network.json.register
 
-class RegisterRequestJson {
-}
+import com.google.gson.annotations.SerializedName
+
+data class RegisterRequestJson (@SerializedName("email") val email: String, @SerializedName("password") val password: String)

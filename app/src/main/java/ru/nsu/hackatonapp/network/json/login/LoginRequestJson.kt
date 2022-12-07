@@ -1,5 +1,9 @@
 package ru.nsu.hackatonapp.network.json.login
 
-import com.squareup.moshi.Json
+import com.google.gson.annotations.SerializedName
 
-data class LoginRequestJson(@Json(name = "email") val email: String, @Json(name="password") val password: String)
+
+data class LoginRequestJson(
+    @SerializedName("email") val email: String,
+    @SerializedName("password") val password: String
+)
