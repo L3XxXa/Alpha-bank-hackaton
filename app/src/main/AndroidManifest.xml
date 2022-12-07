@@ -41,6 +41,10 @@
             android:name=".activities.RestorePasswordActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.CardsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

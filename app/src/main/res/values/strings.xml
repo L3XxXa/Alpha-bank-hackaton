@@ -19,4 +19,7 @@
     <string name="we_will_send_you_code">Мы отправим Вам код для восстановления пароля</string>
     <string name="enter_code">Введите код подтверждения</string>
     <string name="restore_password">Восстановить пароль</string>
+    <string name="my_cards">Мои карты</string>
+    <string name="add_card">добавить карту</string>
+    <string name="create_card">+</string>
 </resources>

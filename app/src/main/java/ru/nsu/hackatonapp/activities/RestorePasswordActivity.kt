@@ -8,10 +8,10 @@ class RestorePasswordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRestorePasswordBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         binding = ActivityRestorePasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        super.onCreate(savedInstanceState)
         binding.restorePasswordButton.setOnClickListener{
             restorePassword()
         }
