@@ -17,12 +17,14 @@ public class UserController {
 
     @PostMapping(value = "/user/register")
     public BaseResponse<Boolean> register(@RequestBody UserDto userDto) {
+        System.out.println("User registered query" + userDto);
         return new BaseResponse<>(userService.registration(userDto),
                 "Registration completed");
     }
 
     @PostMapping(value = "/user/login")
     public BaseResponse<Boolean> login(@RequestBody UserDto userDto) {
+        System.out.println("User login query" + userDto);
         return new BaseResponse<>(userService.login(userDto),
                 "Login completed");
     }
