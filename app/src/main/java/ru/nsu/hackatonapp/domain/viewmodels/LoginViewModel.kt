@@ -24,7 +24,7 @@ class LoginViewModel : ViewModel() {
                     loginResult.value = BaseResponse.Success(response.body())
                 } else {
                     loginResult.value = BaseResponse.Error(response.message())
-                    Log.e(LogTags.LOGIN_TAG, "Error from viewmodel. Code ${response.code()}. Message ${response.message()}")
+                    Log.e(LogTags.LOGIN_TAG, "Error from viewmodel. Code ${response.code()}. Message $response")
                 }
             } catch (e: Exception) {
                 loginResult.value = BaseResponse.Error(e.message)
