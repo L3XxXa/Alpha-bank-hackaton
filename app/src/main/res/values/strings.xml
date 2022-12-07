@@ -5,4 +5,6 @@
     <string name="generate">Generate</string>
     <string name="qr">qr</string>
     <string name="ean_13">ean13</string>
+    <string name="qrvalue">value</string>
+    <string name="qrName">qrName</string>
 </resources>
