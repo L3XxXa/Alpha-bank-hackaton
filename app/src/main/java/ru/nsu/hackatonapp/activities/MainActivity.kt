@@ -22,6 +22,7 @@ import kotlinx.coroutines.runBlocking
 import ru.nsu.hackatonapp.R
 import ru.nsu.hackatonapp.domain.viewmodels.LoginViewModel
 import ru.nsu.hackatonapp.network.BaseResponse
+import ru.nsu.hackatonapp.utils.FieldValidators
 import java.io.Console
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun register() {
         val intent = Intent(this, RegistrationActivity::class.java)
+        Log.d(LogTags.REGISTRATION, "$intent")
         startActivity(intent)
     }
 
@@ -73,38 +75,24 @@ class MainActivity : AppCompatActivity() {
     private fun login() {
         val email = binding.loginEmail.text.toString()
         val password = binding.loginPassword.text.toString()
-        if (!checkEmail(binding.loginEmail.text.toString())){
-            if (!checkPassword(binding.loginPassword.text.toString())){
-                Log.i(LogTags.LOGIN_TAG, "Not password")
+        if (!FieldValidators.checkEmail(binding.loginEmail.text.toString())){
+            displayError(binding.errorEmailLogin, getString(R.string.enter_valid_email))
+            Log.e(LogTags.LOGIN_TAG, "Not email")
+            if (!FieldValidators.checkPassword(binding.loginPassword.text.toString())){
+                Log.e(LogTags.LOGIN_TAG, "Not password")
+                displayError(binding.errorPswdLogin, getString(R.string.enter_password))
                 return
             }
-            Log.i(LogTags.LOGIN_TAG, "Not email")
             return
         }
         binding.errorEmailLogin.visibility = INVISIBLE
-        if (!checkPassword(binding.loginPassword.text.toString())){
-            Log.i(LogTags.LOGIN_TAG, "Not password")
+        if (!FieldValidators.checkPassword(binding.loginPassword.text.toString())){
+            Log.e(LogTags.LOGIN_TAG, "Not password")
+            displayError(binding.errorPswdLogin, getString(R.string.enter_password))
             return
         }
         binding.errorPswdLogin.visibility = INVISIBLE
         loginViewModel.loginUser(email, password)
-    }
-
-    private fun checkPassword(password: String): Boolean {
-        if(password == ""){
-            displayError(binding.errorPswdLogin, getString(R.string.enter_password))
-            return false
-        }
-        return true
-    }
-
-    private fun checkEmail(email: String): Boolean {
-        val regex = "^[A-Za-z](.*)([@]{1})(.{1,})(\\.)(.{1,})"
-        if(!regex.toRegex().matches(email)){
-            displayError(binding.errorEmailLogin, getString(R.string.enter_valid_email))
-            return false
-        }
-        return true
     }
 
 

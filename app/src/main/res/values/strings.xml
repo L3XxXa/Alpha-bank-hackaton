@@ -11,4 +11,7 @@
     <string name="password">Пароль</string>
     <string name="enter_valid_email">Введите e-mail в верном формате</string>
     <string name="wrong_email_or_pswd">Неправильный логин или пароль</string>
+    <string name="confirm_password">Повторите пароль</string>
+    <string name="not_equal_passwords">Пароли не совпадают</string>
+    <string name="password_len">Введите пароль длиной от 8 до 16 символов</string>
 </resources>
