@@ -1,29 +1,21 @@
 package ru.nsu.hackatonapp.activities
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View.*
-import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import ru.nsu.hackatonapp.databinding.ActivityMainBinding
 import ru.nsu.hackatonapp.utils.LogTags
 import android.widget.Toast
-import androidx.databinding.BindingAdapter
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import ru.nsu.hackatonapp.R
 import ru.nsu.hackatonapp.domain.viewmodels.LoginViewModel
 import ru.nsu.hackatonapp.network.BaseResponse
 import ru.nsu.hackatonapp.utils.FieldValidators
-import java.io.Console
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -42,11 +34,20 @@ class MainActivity : AppCompatActivity() {
         binding.registerButton.setOnClickListener{
             register()
         }
+        binding.restorePswdLogin.setOnClickListener{
+            restorePassword()
+        }
+    }
+
+    private fun restorePassword() {
+        val intent = Intent(this, RestorePasswordActivity::class.java)
+        Log.d(LogTags.RESTORE_PSWD, "Starting restore password activity")
+        startActivity(intent)
     }
 
     private fun register() {
         val intent = Intent(this, RegistrationActivity::class.java)
-        Log.d(LogTags.REGISTRATION, "$intent")
+        Log.d(LogTags.REGISTRATION, "Starting registration activity")
         startActivity(intent)
     }
 

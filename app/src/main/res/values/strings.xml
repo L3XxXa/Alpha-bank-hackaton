@@ -15,4 +15,8 @@
     <string name="not_equal_passwords">Пароли не совпадают</string>
     <string name="password_len">Введите пароль длиной от 8 до 16 символов</string>
     <string name="loading">Загрузка</string>
+    <string name="place_e_mail">Укажите e-mail</string>
+    <string name="we_will_send_you_code">Мы отправим Вам код для восстановления пароля</string>
+    <string name="enter_code">Введите код подтверждения</string>
+    <string name="restore_password">Восстановить пароль</string>
 </resources>
