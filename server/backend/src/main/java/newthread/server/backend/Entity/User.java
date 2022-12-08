@@ -2,10 +2,8 @@ package newthread.server.backend.Entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class User {
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.EAGER,
-            mappedBy = "owner"
+            mappedBy = "userId"
     )
     List<Card> cards = new ArrayList<>();
     @Id

@@ -13,11 +13,9 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long userId;
     private String name;
     private String number;
     private Integer priority;
     private Double distanceToNearest;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User owner;
 }
