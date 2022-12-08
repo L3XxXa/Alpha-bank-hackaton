@@ -1,6 +1,7 @@
 package ru.nsu.hackatonapp.activities
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -99,6 +100,10 @@ class MainActivity : AppCompatActivity() {
         }
         binding.errorPswdLogin.visibility = INVISIBLE
         loginViewModel.loginUser(email, password)
+        val sharedPref = getSharedPreferences(getString(R.string.pref_email_file_name),Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("email", email)
+        editor.apply()
     }
 
 
@@ -135,5 +140,9 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.CAMERA
             )
         )
+    }
+
+    override fun onBackPressed() {
+
     }
 }

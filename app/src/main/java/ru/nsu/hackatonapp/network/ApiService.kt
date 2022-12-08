@@ -14,7 +14,7 @@ import ru.nsu.hackatonapp.network.json.login.LoginResponseJson
 import ru.nsu.hackatonapp.network.json.register.RegisterRequestJson
 import ru.nsu.hackatonapp.network.json.register.RegisterResponseJson
 
-private const val baseUrl = "http://172.20.10.13:8080"
+private const val baseUrl = "http://192.168.31.98:8080"
 
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())

@@ -22,4 +22,9 @@
     <string name="my_cards">Мои карты</string>
     <string name="add_card">добавить карту</string>
     <string name="create_card">+</string>
+    <string name="logout">logout</string>
+    <string name="pref_email_file_name">email_shared_prefs</string>
+    <string name="enter_shop_name">Введите название магазина</string>
+    <string name="shop_name">Название магазина</string>
+    <string name="scan_code">Сканировать код</string>
 </resources>

@@ -1,5 +1,6 @@
 package ru.nsu.hackatonapp.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View.*
@@ -45,12 +46,18 @@ class RegistrationActivity : AppCompatActivity() {
                 is BaseResponse.Success -> {
                     Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                     Log.i(LogTags.REGISTRATION, "Successful registration")
+                    login()
                 }
                 else -> {
                     Log.e(LogTags.REGISTRATION, "Unexpected error")
                 }
             }
         }
+    }
+
+    private fun login() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun register() {
