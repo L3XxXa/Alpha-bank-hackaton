@@ -27,4 +27,6 @@
     <string name="enter_shop_name">Введите название магазина</string>
     <string name="shop_name">Название магазина</string>
     <string name="scan_code">Сканировать код</string>
+    <string name="create_card_text">Создать карту</string>
+    <string name="read_code">Считанный код</string>
 </resources>

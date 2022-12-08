@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/login_email"
+        android:id="@+id/shop_name"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="256dp"
@@ -61,12 +61,57 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:text="@string/scan_code"
-            android:drawableStart="@drawable/camera"
+            android:textColor="@color/text_view_grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableStartCompat="@drawable/camera" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="496dp"
+        android:text="@string/read_code"
+        android:visibility="invisible"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/code"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="536dp"
+        android:autofillHints="no"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:visibility="invisible"
+        android:textColor="@color/black"
+        android:textColorHint="@color/text_view_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/create_card"
+        android:layout_width="295dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="650dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/create_card_text"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
