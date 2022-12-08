@@ -13,7 +13,6 @@ public class CardMapper {
     public CardDto modelToDto(Card card) {
         CardDto dto = new CardDto();
         dto.setId(card.getId());
-        dto.setImage(card.getImage());
         dto.setNumber(card.getNumber());
         dto.setName(card.getName());
         dto.setPriority(card.getPriority());
@@ -32,7 +31,6 @@ public class CardMapper {
         Card card = new Card();
         card.setId(dto.getId());
         card.setName(dto.getNumber());
-        card.setImage(dto.getImage());
         card.setNumber(dto.getNumber());
         return card;
     }

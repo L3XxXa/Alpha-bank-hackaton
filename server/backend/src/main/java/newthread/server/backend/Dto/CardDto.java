@@ -9,6 +9,5 @@ public class CardDto {
     private Long id;
     private String name;
     private String number;
-    private String image;
     private Integer priority;
 }
