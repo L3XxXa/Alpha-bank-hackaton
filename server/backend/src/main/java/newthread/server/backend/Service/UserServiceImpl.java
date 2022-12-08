@@ -45,8 +45,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(UserDto userDto) {
-        User user = userRepository.findFirstByEmail(userDto.getEmail());
-        if (user.getPassword().equals(userDto.getPassword())) {
+        String password;
+        try {
+            User user = userRepository.findFirstByEmail(userDto.getEmail());
+            password = user.getPassword();
+        } catch (Exception e) {
+            throw new NotFound("Not found");
+        }
+        if (password.equals(userDto.getPassword())) {
             return true;
         } else {
             throw new InvalidData("InvalidData");
