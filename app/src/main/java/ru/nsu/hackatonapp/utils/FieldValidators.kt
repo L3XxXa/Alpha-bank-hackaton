@@ -1,12 +1,9 @@
 package ru.nsu.hackatonapp.utils
 
-import android.util.Log
-import ru.nsu.hackatonapp.R
-
 class FieldValidators {
     companion object {
-        fun checkPassword(password: String): Boolean {
-            return password!=""
+        fun checkFieldNotEmpty(field: String): Boolean {
+            return field!=""
         }
 
         fun checkLengthPassword(password: String): Boolean{

@@ -34,7 +34,7 @@ class RestorePasswordActivity : AppCompatActivity() {
             Toast.makeText(this, "Длина пароля < 8, длина пароля > 16", Toast.LENGTH_SHORT).show()
             return
         }
-        if (!FieldValidators.checkPassword(binding.restorePassword.text.toString())){
+        if (!FieldValidators.checkFieldNotEmpty(binding.restorePassword.text.toString())){
             Toast.makeText(this, "Введите пароль", Toast.LENGTH_SHORT).show()
             return
         }

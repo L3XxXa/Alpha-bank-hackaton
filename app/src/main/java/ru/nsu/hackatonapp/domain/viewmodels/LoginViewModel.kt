@@ -22,6 +22,7 @@ class LoginViewModel : ViewModel() {
                 val response = loginRepository.loginUser(loginRequest)
                 if (response.code() == 200) {
                     loginResult.value = BaseResponse.Success(response.body())
+                    Log.d(LogTags.LOGIN_TAG, response.body().toString())
                 } else {
                     loginResult.value = BaseResponse.Error(response.message())
                     Log.e(LogTags.LOGIN_TAG, "Error from viewmodel. Code ${response.code()}. Message $response")

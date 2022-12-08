@@ -21,7 +21,7 @@ import ru.nsu.hackatonapp.utils.FieldValidators
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val loginViewModel: LoginViewModel by viewModels()
-
+    private var userId: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
         loginViewModel.loginResult.observe(this) {
             when (it) {
                 is BaseResponse.Loading -> {
-                    Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show()
                     Log.i(LogTags.LOGIN_TAG, "Logging ...")
                 }
                 is BaseResponse.Error -> {
@@ -64,8 +63,9 @@ class MainActivity : AppCompatActivity() {
                     Log.e(LogTags.LOGIN_TAG, "Error while logging. ${it.msg}")
                 }
                 is BaseResponse.Success -> {
+                    userId = it.data?.userId
                     startCardsActivity()
-                    Log.i(LogTags.LOGIN_TAG, "Successfully logged in")
+                    Log.i(LogTags.LOGIN_TAG, "Successfully logged in + ${it.data?.userId}")
                 }
                 else -> {
                     Log.e(LogTags.LOGIN_TAG, "Unexpected error")
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         if (!FieldValidators.checkEmail(email)){
             displayError(binding.errorEmailLogin, getString(R.string.enter_valid_email))
             Log.e(LogTags.LOGIN_TAG, "Not email")
-            if (!FieldValidators.checkPassword(password)){
+            if (!FieldValidators.checkFieldNotEmpty(password)){
                 Log.e(LogTags.LOGIN_TAG, "Not password")
                 displayError(binding.errorPswdLogin, getString(R.string.enter_password))
                 return
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
         binding.errorEmailLogin.visibility = INVISIBLE
-        if (!FieldValidators.checkPassword(password)){
+        if (!FieldValidators.checkFieldNotEmpty(password)){
             Log.e(LogTags.LOGIN_TAG, "Not password")
             displayError(binding.errorPswdLogin, getString(R.string.enter_password))
             return
@@ -103,6 +103,7 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences(getString(R.string.pref_email_file_name),Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
         editor.putString("email", email)
+        editor.putString("userId", userId)
         editor.apply()
     }
 

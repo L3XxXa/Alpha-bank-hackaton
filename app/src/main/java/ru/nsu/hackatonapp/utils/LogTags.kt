@@ -6,5 +6,6 @@ class LogTags {
         const val LOGIN_TAG = "Login"
         const val REGISTRATION = "Registration"
         const val RESTORE_PSWD = "Restore password"
+        const val ADD_CARD = "Add card"
     }
 }

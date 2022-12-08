@@ -14,6 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,4 +57,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="411dp"
+        android:layout_height="514dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/refresh_cards"
+        android:layout_width="295dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="650dp"
+        android:backgroundTint="@color/red"
+        android:text="@string/refresh_cards"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

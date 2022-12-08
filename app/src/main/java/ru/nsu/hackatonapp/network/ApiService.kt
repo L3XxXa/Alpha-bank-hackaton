@@ -7,6 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import ru.nsu.hackatonapp.network.json.add_card.AddCardRequestJson
+import ru.nsu.hackatonapp.network.json.add_card.AddCardResponseJson
 import ru.nsu.hackatonapp.network.json.change_password.ChangePasswordRequestJson
 import ru.nsu.hackatonapp.network.json.change_password.ChangePasswordResponseJson
 import ru.nsu.hackatonapp.network.json.login.LoginRequestJson
@@ -29,6 +31,9 @@ interface ApiService {
 
     @PUT("/api/user")
     suspend fun changePassword(@Body changePasswordRequestJson: ChangePasswordRequestJson): Response<ChangePasswordResponseJson>
+
+    @POST("/api/card")
+    suspend fun addCard(@Body addCardRequestJson: AddCardRequestJson): Response<AddCardResponseJson>
 
 }
 

@@ -49,6 +49,10 @@
             android:name=".activities.CreateCardActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.BarcodeScannerActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
