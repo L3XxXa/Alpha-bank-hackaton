@@ -6,7 +6,7 @@
     <data>
         <variable
             name="card_name"
-            type="" />
+            type="ru.nsu.hackatonapp.network.json.card.Card" />
     </data>
     <Button
         android:layout_width="match_parent"
