@@ -19,6 +19,7 @@ public class CardMapper {
         dto.setNumber(card.getNumber());
         dto.setName(card.getName());
         dto.setPriority(card.getPriority());
+        dto.setDistanceToNearest(card.getDistanceToNearest());
         return dto;
     }
 
@@ -36,6 +37,7 @@ public class CardMapper {
         card.setId(dto.getId());
         card.setName(dto.getNumber());
         card.setNumber(dto.getNumber());
+        card.setDistanceToNearest(dto.getDistanceToNearest());
         card.setOwner(userMapper.dtoToModel(dto.getOwner()));
         return card;
     }

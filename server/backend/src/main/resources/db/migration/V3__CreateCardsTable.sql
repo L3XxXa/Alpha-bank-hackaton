@@ -8,6 +8,7 @@ create table cards
     image    varchar   not null,
     number   varchar   not null,
     priority int4 not null default 0,
+    distance_to_nearest double precision,
     foreign key (user_id) references users (id),
     unique(user_id, "name")
 )

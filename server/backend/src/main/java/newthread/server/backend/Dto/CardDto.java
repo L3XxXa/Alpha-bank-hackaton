@@ -10,5 +10,6 @@ public class CardDto {
     private String name;
     private String number;
     private Integer priority;
+    private Double distanceToNearest;
     private UserDto owner;
 }
