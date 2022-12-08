@@ -23,20 +23,6 @@
     <!--            app:layout_constraintStart_toStartOf="parent"-->
     <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="145dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="484dp"
-        android:backgroundTint="#EF3124"
-        android:text="Show"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/qrValue"
         android:layout_width="wrap_content"
@@ -69,9 +55,10 @@
         android:id="@+id/firstQrView"
         android:layout_width="214dp"
         android:layout_height="201dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -59,8 +59,8 @@ class QrCodeAnalyzer(
                             // Handle received barcodes...
                             Toast.makeText(
                                 context,
-                                "Карта добавлена",
-                                Toast.LENGTH_LONG
+                                "Карта успешно просканирована",
+                                Toast.LENGTH_SHORT
                             )
                                 .show()
                             ReceiveCode.setCode(barcode.rawValue as String)

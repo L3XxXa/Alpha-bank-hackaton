@@ -25,10 +25,10 @@ class GenerateqrActivity : AppCompatActivity() {
         val imageView = findViewById<TextView>(R.id.qrName)
         textView.text = ReceiveCode.getCode()
         imageView.text = ReceiveCode.getName()
-        binding.button.setOnClickListener {
+//        binding.button.setOnClickListener {
             if (codeVal != null) {
                 showQr(codeVal)
-            }
+//            }
         }
     }
 
