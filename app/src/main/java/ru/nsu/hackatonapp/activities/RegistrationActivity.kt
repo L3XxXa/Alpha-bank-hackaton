@@ -35,7 +35,7 @@ class RegistrationActivity : AppCompatActivity() {
         registerViewModel.registerResult.observe(this){
             when(it){
                 is BaseResponse.Loading -> {
-                    Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.loading), Toast.LENGTH_SHORT).show()
                     Log.i(LogTags.REGISTRATION, "Logging...")
                 }
                 is BaseResponse.Error -> {

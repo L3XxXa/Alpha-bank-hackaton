@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e(LogTags.LOGIN_TAG, "Error while logging. ${it.msg}")
                 }
                 is BaseResponse.Success -> {
-                    Toast.makeText(this, "Successfully logged in", Toast.LENGTH_SHORT).show()
+                    startCardsActivity()
                     Log.i(LogTags.LOGIN_TAG, "Successfully logged in")
                 }
                 else -> {
@@ -71,6 +71,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun startCardsActivity() {
+        val intent = Intent(this, CardsActivity::class.java)
+        startActivity(intent)
     }
 
     private fun login() {
