@@ -2,6 +2,7 @@ package newthread.server.backend.Mapper;
 
 import newthread.server.backend.Dto.CardDto;
 import newthread.server.backend.Entity.Card;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,13 +11,15 @@ import java.util.List;
 
 @Component
 public class CardMapper {
+
+
     public CardDto modelToDto(Card card) {
         CardDto dto = new CardDto();
         dto.setId(card.getId());
-        dto.setImage(card.getImage());
         dto.setNumber(card.getNumber());
         dto.setName(card.getName());
         dto.setPriority(card.getPriority());
+        dto.setDistanceToNearest(card.getDistanceToNearest());
         return dto;
     }
 
@@ -29,11 +32,13 @@ public class CardMapper {
     }
 
     public Card dtoToModel(CardDto dto) {
+        UserMapper userMapper = new UserMapper();
         Card card = new Card();
         card.setId(dto.getId());
         card.setName(dto.getNumber());
-        card.setImage(dto.getImage());
         card.setNumber(dto.getNumber());
+        card.setDistanceToNearest(dto.getDistanceToNearest());
+        card.setOwner(userMapper.dtoToModel(dto.getOwner()));
         return card;
     }
 

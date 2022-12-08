@@ -17,11 +17,9 @@ public class User {
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            fetch = FetchType.EAGER
+            fetch = FetchType.EAGER,
+            mappedBy = "owner"
     )
-    @JoinTable(name = "cards",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "id"))
     List<Card> cards = new ArrayList<>();
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -101,6 +101,7 @@ public class UserServiceImpl implements UserService {
             Long curId = map.get(results.get(i));
             Card curCard = cardRepository.findFirstById(curId);
             curCard.setPriority(i);
+            curCard.setDistanceToNearest(results.get(i));
             cardRepository.save(curCard);
         }
         return true;

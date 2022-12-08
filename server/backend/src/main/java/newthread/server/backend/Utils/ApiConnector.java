@@ -46,10 +46,10 @@ public class ApiConnector {
                 }
                 var result = parseJson(response);
                 if (result != null) {
-                    Double distance = Point2D.Double.distance(result.getX(), result.getY()
-                            , sortPoint.getX(), sortPoint.getY());
+                    Double distance = Math.abs(Point2D.Double.distance(result.getX(), result.getY()
+                            , sortPoint.getX(), sortPoint.getY()));
                     distanceToId.put(distance, card.getId());
-                    results.add(Math.abs(distance));
+                    results.add(distance);
                 } else {
                     distanceToId.put(Double.MAX_VALUE, card.getId());
                     results.add(Double.MAX_VALUE);
