@@ -2,6 +2,7 @@ package newthread.server.backend.Mapper;
 
 import newthread.server.backend.Dto.CardDto;
 import newthread.server.backend.Entity.Card;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -10,6 +11,8 @@ import java.util.List;
 
 @Component
 public class CardMapper {
+
+
     public CardDto modelToDto(Card card) {
         CardDto dto = new CardDto();
         dto.setId(card.getId());
@@ -28,10 +31,12 @@ public class CardMapper {
     }
 
     public Card dtoToModel(CardDto dto) {
+        UserMapper userMapper = new UserMapper();
         Card card = new Card();
         card.setId(dto.getId());
         card.setName(dto.getNumber());
         card.setNumber(dto.getNumber());
+        card.setOwner(userMapper.dtoToModel(dto.getOwner()));
         return card;
     }
 

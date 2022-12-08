@@ -16,4 +16,7 @@ public class Card {
     private String name;
     private String number;
     private Integer priority;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User owner;
 }

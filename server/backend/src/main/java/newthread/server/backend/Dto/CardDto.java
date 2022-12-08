@@ -10,4 +10,5 @@ public class CardDto {
     private String name;
     private String number;
     private Integer priority;
+    private UserDto owner;
 }
