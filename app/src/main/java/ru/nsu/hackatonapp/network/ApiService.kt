@@ -1,6 +1,7 @@
 package ru.nsu.hackatonapp.network
 
 
+import android.util.Log
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,8 +19,9 @@ import ru.nsu.hackatonapp.network.json.login.LoginRequestJson
 import ru.nsu.hackatonapp.network.json.login.LoginResponseJson
 import ru.nsu.hackatonapp.network.json.register.RegisterRequestJson
 import ru.nsu.hackatonapp.network.json.register.RegisterResponseJson
+import ru.nsu.hackatonapp.utils.LogTags
 
-private const val baseUrl = "http://172.20.10.14:8080"
+private const val baseUrl = "http://192.168.43.86:8080"
 
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
@@ -38,7 +40,7 @@ interface ApiService {
     @POST("/api/card")
     suspend fun addCard(@Body addCardRequestJson: AddCardRequestJson): Response<AddCardResponseJson>
 
-    @GET("/api/card")
+    @GET("/api/cards")
     suspend fun getCards(@Query("id") loginId: String): List<Card>
 
 }

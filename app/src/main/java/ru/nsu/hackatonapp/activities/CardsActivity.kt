@@ -4,11 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ru.nsu.hackatonapp.R
+import ru.nsu.hackatonapp.adapters.CardGridAdapter
 import ru.nsu.hackatonapp.databinding.ActivityCardsBinding
 import ru.nsu.hackatonapp.domain.viewmodels.CardsViewModel
+import ru.nsu.hackatonapp.utils.LogTags
 
 class CardsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCardsBinding
@@ -19,6 +22,7 @@ class CardsActivity : AppCompatActivity() {
         binding = ActivityCardsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         placeEmail()
+        requestCards()
         binding.createCard.setOnClickListener {
             createCardActivity()
         }
@@ -29,13 +33,15 @@ class CardsActivity : AppCompatActivity() {
         binding.refreshCards.setOnClickListener {
             requestCards()
         }
+        binding.cardsGrid.adapter = CardGridAdapter()
     }
 
     private fun requestCards() {
         val sharedPrefEmail =
             getSharedPreferences(getString(R.string.pref_email_file_name), Context.MODE_PRIVATE)
         val userId = sharedPrefEmail.getString("userId", "-1")
-        viewModel.getPhotos(userId!!)
+        Log.d(LogTags.ACTIVITY_CARD, userId!!)
+
     }
 
     private fun placeEmail() {

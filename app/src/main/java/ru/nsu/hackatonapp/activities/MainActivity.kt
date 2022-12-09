@@ -17,6 +17,7 @@ import ru.nsu.hackatonapp.R
 import ru.nsu.hackatonapp.domain.viewmodels.LoginViewModel
 import ru.nsu.hackatonapp.network.BaseResponse
 import ru.nsu.hackatonapp.utils.FieldValidators
+import ru.nsu.hackatonapp.utils.UserID
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -63,9 +64,10 @@ class MainActivity : AppCompatActivity() {
                     Log.e(LogTags.LOGIN_TAG, "Error while logging. ${it.msg}")
                 }
                 is BaseResponse.Success -> {
-                    userId = it.data?.userId
-                    startCardsActivity()
-                    Log.i(LogTags.LOGIN_TAG, "Successfully logged in + ${it.data?.userId}")
+                    userId = it.data?.result
+                    UserID.userID = it.data?.result!!
+                    startCardsActivity(userId!!)
+                    Log.i(LogTags.LOGIN_TAG, "Successfully logged in + ${it.data.result}")
                 }
                 else -> {
                     Log.e(LogTags.LOGIN_TAG, "Unexpected error")
@@ -74,7 +76,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun startCardsActivity() {
+    private fun startCardsActivity(userId: String) {
+        val sharedPref = getSharedPreferences(getString(R.string.pref_email_file_name),Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("userId", userId)
+        editor.apply()
+        val email_s = sharedPref.getString("userId", "user")
+        Log.d(LogTags.LOGIN_TAG, " user id is $email_s")
         val intent = Intent(this, CardsActivity::class.java)
         startActivity(intent)
     }
@@ -103,8 +111,9 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences(getString(R.string.pref_email_file_name),Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
         editor.putString("email", email)
-        editor.putString("userId", userId)
         editor.apply()
+        startCardsActivity("1")
+
     }
 
 

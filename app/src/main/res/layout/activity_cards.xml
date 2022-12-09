@@ -66,22 +66,24 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="410dp"
-            android:layout_height="531dp"
+            android:layout_width="405dp"
+            android:layout_height="595dp"
             android:layout_marginTop="112dp"
+            android:clipToPadding="false"
             android:padding="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:listData="@{viewModel.result}"
-            android:clipToPadding="false"
-            tools:itemCount="6"
+            tools:itemCount="7"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:id="@+id/cards_grid"
+            app:listData="@{viewModel.cards}"
             tools:listitem="@layout/grid_view_item" />
 
         <Button
             android:id="@+id/refresh_cards"
             android:layout_width="295dp"
             android:layout_height="60dp"
-            android:layout_marginTop="650dp"
+            android:layout_marginTop="768dp"
             android:backgroundTint="@color/red"
             android:text="@string/refresh_cards"
             android:textAllCaps="false"
