@@ -5,6 +5,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import ru.nsu.hackatonapp.network.json.add_card.AddCardRequestJson
@@ -34,6 +35,9 @@ interface ApiService {
 
     @POST("/api/card")
     suspend fun addCard(@Body addCardRequestJson: AddCardRequestJson): Response<AddCardResponseJson>
+
+    @GET("/api/card")
+    suspend fun getCards()
 
 }
 
