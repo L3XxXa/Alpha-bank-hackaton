@@ -22,11 +22,10 @@ class ChangePasswordViewModel : ViewModel() {
                 val response = changePasswordRepository.changePassword(request)
                 if (response.code() == 200){
                     result.value = BaseResponse.Success(response.body())
-
                 }
                 else {
                     result.value = BaseResponse.Error(response.message())
-                    Log.e(LogTags.RESTORE_PSWD, "Error from viewmodel. Code ${response.code()}. Message $response")
+                    Log.e(LogTags.RESTORE_PSWD, "Error from view model. Code ${response.code()}. Message $response")
                 }
             } catch (e: Exception){
                 result.value = BaseResponse.Error(e.message)

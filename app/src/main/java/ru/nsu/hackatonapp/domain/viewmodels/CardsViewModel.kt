@@ -15,21 +15,29 @@ import ru.nsu.hackatonapp.utils.UserID
 
 enum class Status { ERROR, SUCCESS, LOADING }
 
-class CardsViewModel(val id: String) : ViewModel() {
+class CardsViewModel() : ViewModel() {
     private val _status = MutableLiveData<Status>()
     val status: LiveData<Status> = _status
     private val _cards = MutableLiveData<List<Card>>()
     val cards: LiveData<List<Card>> = _cards
+    var debugCards = ArrayList<Card>()
     init {
+        Log.d(LogTags.ACTIVITY_CARD, "LOASDAsdjksahfuhsaduifhuadsSDASDSA")
+
         getCards()
     }
 
     private fun getCards() {
+        Log.d(LogTags.ACTIVITY_CARD, "LOASDASDASDSA")
         viewModelScope.launch {
             _status.value = Status.LOADING
             try{
                 _cards.value = Api.retrofitService.getCards(UserID.userID)
+                debugCards = Api.retrofitService.getCards(UserID.userID) as ArrayList<Card>
+                Log.d(LogTags.ACTIVITY_CARD, "debug cards $debugCards")
+                Log.d(LogTags.ACTIVITY_CARD, "value ${cards.value}")
                 _status.value = Status.SUCCESS
+                Log.d(LogTags.ACTIVITY_CARD, "${_status.value}")
             } catch (e: Exception){
                 Log.d(LogTags.ACTIVITY_CARD, "Error view model")
                 _status.value = Status.ERROR

@@ -64,9 +64,8 @@ class MainActivity : AppCompatActivity() {
                     Log.e(LogTags.LOGIN_TAG, "Error while logging. ${it.msg}")
                 }
                 is BaseResponse.Success -> {
-                    userId = it.data?.result
                     UserID.userID = it.data?.result!!
-                    startCardsActivity(userId!!)
+                    startCardsActivity(UserID.userID)
                     Log.i(LogTags.LOGIN_TAG, "Successfully logged in + ${it.data.result}")
                 }
                 else -> {
@@ -112,8 +111,6 @@ class MainActivity : AppCompatActivity() {
         val editor = sharedPref.edit()
         editor.putString("email", email)
         editor.apply()
-        startCardsActivity("1")
-
     }
 
 

@@ -7,10 +7,13 @@ import android.os.PersistableBundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import ru.nsu.hackatonapp.R
 import ru.nsu.hackatonapp.adapters.CardGridAdapter
 import ru.nsu.hackatonapp.databinding.ActivityCardsBinding
 import ru.nsu.hackatonapp.domain.viewmodels.CardsViewModel
+import ru.nsu.hackatonapp.network.Api
 import ru.nsu.hackatonapp.utils.LogTags
 
 class CardsActivity : AppCompatActivity() {
@@ -33,7 +36,6 @@ class CardsActivity : AppCompatActivity() {
         binding.refreshCards.setOnClickListener {
             requestCards()
         }
-        binding.cardsGrid.adapter = CardGridAdapter()
     }
 
     private fun requestCards() {
@@ -41,6 +43,7 @@ class CardsActivity : AppCompatActivity() {
             getSharedPreferences(getString(R.string.pref_email_file_name), Context.MODE_PRIVATE)
         val userId = sharedPrefEmail.getString("userId", "-1")
         Log.d(LogTags.ACTIVITY_CARD, userId!!)
+        binding.cardsGrid.adapter = CardGridAdapter()
 
     }
 

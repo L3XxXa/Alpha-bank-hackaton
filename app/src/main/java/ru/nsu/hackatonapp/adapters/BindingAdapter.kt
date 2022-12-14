@@ -8,31 +8,7 @@ import ru.nsu.hackatonapp.utils.LogTags
 
 @BindingAdapter("listData")
 fun bindRecycleView(recyclerView: RecyclerView, data: List<Card>?) {
-    val list = ArrayList<Card>()
-    list.add(Card("123", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-    list.add(Card("228", "123", "123", "123", "123"))
-
     val adapter = recyclerView.adapter as CardGridAdapter
-    adapter.submitList(list)
+    Log.d(LogTags.ACTIVITY_CARD, " data is $data")
+    adapter.submitList(data)
 }
