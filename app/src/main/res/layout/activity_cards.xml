@@ -1,34 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.CardsActivity"
-    android:background="@color/grey">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/my_cards"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="viewModel"
+            type="ru.nsu.hackatonapp.domain.viewmodels.CardsViewModel" />
+    </data>
 
-    <Button
-        android:layout_width="46dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="332dp"
-        android:layout_marginTop="42dp"
-        android:backgroundTint="@color/red"
-        android:contentDescription="@string/add_card"
-        android:text="@string/create_card"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        tools:context=".activities.CardsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/logout"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="360dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey"
+            android:contentDescription="@string/logout"
+            android:src="@drawable/log_out"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="55dp"
+            android:text="@string/my_cards"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/createCard"
+            android:layout_width="46dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="348dp"
+            android:layout_marginTop="52dp"
+            android:backgroundTint="@color/red"
+            android:contentDescription="@string/add_card"
+            android:text="@string/create_card"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="405dp"
+            android:layout_height="595dp"
+            android:layout_marginTop="112dp"
+            android:clipToPadding="false"
+            android:padding="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="7"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            android:id="@+id/cards_grid"
+            app:listData="@{viewModel.cards}"
+            tools:listitem="@layout/grid_view_item" />
+
+        <Button
+            android:id="@+id/refresh_cards"
+            android:layout_width="295dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="768dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/refresh_cards"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,6 +1,7 @@
 package ru.nsu.hackatonapp.activities
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,11 +17,12 @@ import ru.nsu.hackatonapp.R
 import ru.nsu.hackatonapp.domain.viewmodels.LoginViewModel
 import ru.nsu.hackatonapp.network.BaseResponse
 import ru.nsu.hackatonapp.utils.FieldValidators
+import ru.nsu.hackatonapp.utils.UserID
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val loginViewModel: LoginViewModel by viewModels()
-
+    private var userId: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -55,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         loginViewModel.loginResult.observe(this) {
             when (it) {
                 is BaseResponse.Loading -> {
-                    Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show()
                     Log.i(LogTags.LOGIN_TAG, "Logging ...")
                 }
                 is BaseResponse.Error -> {
@@ -63,8 +64,9 @@ class MainActivity : AppCompatActivity() {
                     Log.e(LogTags.LOGIN_TAG, "Error while logging. ${it.msg}")
                 }
                 is BaseResponse.Success -> {
-                    startCardsActivity()
-                    Log.i(LogTags.LOGIN_TAG, "Successfully logged in")
+                    UserID.userID = it.data?.result!!
+                    startCardsActivity(UserID.userID)
+                    Log.i(LogTags.LOGIN_TAG, "Successfully logged in + ${it.data.result}")
                 }
                 else -> {
                     Log.e(LogTags.LOGIN_TAG, "Unexpected error")
@@ -73,7 +75,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun startCardsActivity() {
+    private fun startCardsActivity(userId: String) {
+        val sharedPref = getSharedPreferences(getString(R.string.pref_email_file_name),Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("userId", userId)
+        editor.apply()
+        val email_s = sharedPref.getString("userId", "user")
+        Log.d(LogTags.LOGIN_TAG, " user id is $email_s")
         val intent = Intent(this, CardsActivity::class.java)
         startActivity(intent)
     }
@@ -84,7 +92,7 @@ class MainActivity : AppCompatActivity() {
         if (!FieldValidators.checkEmail(email)){
             displayError(binding.errorEmailLogin, getString(R.string.enter_valid_email))
             Log.e(LogTags.LOGIN_TAG, "Not email")
-            if (!FieldValidators.checkPassword(password)){
+            if (!FieldValidators.checkFieldNotEmpty(password)){
                 Log.e(LogTags.LOGIN_TAG, "Not password")
                 displayError(binding.errorPswdLogin, getString(R.string.enter_password))
                 return
@@ -92,13 +100,17 @@ class MainActivity : AppCompatActivity() {
             return
         }
         binding.errorEmailLogin.visibility = INVISIBLE
-        if (!FieldValidators.checkPassword(password)){
+        if (!FieldValidators.checkFieldNotEmpty(password)){
             Log.e(LogTags.LOGIN_TAG, "Not password")
             displayError(binding.errorPswdLogin, getString(R.string.enter_password))
             return
         }
         binding.errorPswdLogin.visibility = INVISIBLE
         loginViewModel.loginUser(email, password)
+        val sharedPref = getSharedPreferences(getString(R.string.pref_email_file_name),Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putString("email", email)
+        editor.apply()
     }
 
 
@@ -135,5 +147,9 @@ class MainActivity : AppCompatActivity() {
                 Manifest.permission.CAMERA
             )
         )
+    }
+
+    override fun onBackPressed() {
+
     }
 }

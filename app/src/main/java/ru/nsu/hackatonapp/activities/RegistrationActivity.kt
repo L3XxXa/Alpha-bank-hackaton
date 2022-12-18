@@ -1,7 +1,7 @@
 package ru.nsu.hackatonapp.activities
 
+import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View.*
 import android.util.Log
 import android.widget.TextView
@@ -45,12 +45,18 @@ class RegistrationActivity : AppCompatActivity() {
                 is BaseResponse.Success -> {
                     Toast.makeText(this, "Successfully registered", Toast.LENGTH_SHORT).show()
                     Log.i(LogTags.REGISTRATION, "Successful registration")
+                    login()
                 }
                 else -> {
                     Log.e(LogTags.REGISTRATION, "Unexpected error")
                 }
             }
         }
+    }
+
+    private fun login() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun register() {
@@ -63,10 +69,10 @@ class RegistrationActivity : AppCompatActivity() {
         if(!FieldValidators.checkEmail(email)){
             displayError(binding.errorEmailRegister, getString(R.string.enter_valid_email))
             Log.e(LogTags.REGISTRATION, "Not email")
-            if (!FieldValidators.checkPassword(password1)){
+            if (!FieldValidators.checkFieldNotEmpty(password1)){
                 displayError(binding.errorPswdRegister, getString(R.string.enter_password))
                 Log.e(LogTags.REGISTRATION, "Not password")
-                if (!FieldValidators.checkPassword(password2)){
+                if (!FieldValidators.checkFieldNotEmpty(password2)){
                     displayError(binding.errorConfirmPswdRegister, getString(R.string.enter_password))
                     Log.e(LogTags.REGISTRATION, "Not password 2")
                     return
@@ -75,10 +81,10 @@ class RegistrationActivity : AppCompatActivity() {
             }
             return
         }
-        if (!FieldValidators.checkPassword(password1)){
+        if (!FieldValidators.checkFieldNotEmpty(password1)){
             displayError(binding.errorPswdRegister, getString(R.string.enter_password))
             Log.e(LogTags.REGISTRATION, "Not password")
-            if (!FieldValidators.checkPassword(password2)){
+            if (!FieldValidators.checkFieldNotEmpty(password2)){
                 displayError(binding.errorConfirmPswdRegister, getString(R.string.enter_password))
                 Log.e(LogTags.REGISTRATION, "Not password 2")
                 return
@@ -90,7 +96,7 @@ class RegistrationActivity : AppCompatActivity() {
             Log.e(LogTags.REGISTRATION, "Bad password len")
             return
         }
-        if (!FieldValidators.checkPassword(password2)){
+        if (!FieldValidators.checkFieldNotEmpty(password2)){
             displayError(binding.errorConfirmPswdRegister, getString(R.string.enter_password))
             Log.e(LogTags.REGISTRATION, "Not password 2")
             return

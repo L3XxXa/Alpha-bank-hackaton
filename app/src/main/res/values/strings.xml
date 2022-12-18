@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HackatonApp</string>
+    <string name="app_name">Alfawallet</string>
     <string name="enter_e_mail">Введите e-mail</string>
     <string name="enter_password">Введите пароль</string>
     <string name="login">Войти</string>
@@ -22,4 +22,14 @@
     <string name="my_cards">Мои карты</string>
     <string name="add_card">добавить карту</string>
     <string name="create_card">+</string>
+    <string name="logout">logout</string>
+    <string name="enter_shop_name">Введите название магазина</string>
+    <string name="shop_name">Название магазина</string>
+    <string name="scan_code">Сканировать код</string>
+    <string name="create_card_text">Создать карту</string>
+    <string name="read_code">Считанный код</string>
+    <string name="refresh_cards">Обновить данные</string>
+
+    <string name="pref_email_file_name">email_shared_prefs</string>
+    <string name="pref_code_file_name">code_shared_prefs</string>
 </resources>
