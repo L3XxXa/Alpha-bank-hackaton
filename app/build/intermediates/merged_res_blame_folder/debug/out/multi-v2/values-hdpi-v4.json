@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "ru.nsu.hackatonapp-mergeDebugResources-50:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/l3xxxa/.gradle/caches/transforms-3/5c8b568f40e34b6f40864221c698085d/transformed/appcompat-1.5.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}
