@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/grid_view_item.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/grid_view_item.xml"
+    },
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/activity_barcode_scanner.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/activity_barcode_scanner.xml"
+    },
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/activity_restore_password.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/activity_restore_password.xml"
+    },
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/activity_registration.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/activity_registration.xml"
+    },
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/activity_main.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/activity_card.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/activity_card.xml"
+    },
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/activity_cards.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/activity_cards.xml"
+    },
+    {
+        "merged": "ru.nsu.hackatonapp-mergeDebugResources-51:/layout/activity_create_card.xml",
+        "source": "ru.nsu.hackatonapp-main-54:/layout/activity_create_card.xml"
+    }
+]

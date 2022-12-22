@@ -1,0 +1,250 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="ru.nsu.hackatonapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+8-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+11-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:5:5-81
+11-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:5:22-78
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:6:5-79
+12-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:7:5-65
+13-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:7:22-62
+14    <uses-permission android:name="android.permission.FLASHLIGHT" />
+14-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:8:5-69
+14-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:8:22-66
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:9:5-67
+15-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:9:22-64
+16
+17    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+18    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+19-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:22-76
+20
+21    <application
+21-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:11:5-56:19
+22        android:allowBackup="true"
+22-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:12:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.8.0] /home/l3xxxa/.gradle/caches/transforms-3/bf90ec9427015ff0e0f69b56c7263102/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+24        android:dataExtractionRules="@xml/data_extraction_rules"
+24-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:13:9-65
+25        android:debuggable="true"
+26        android:extractNativeLibs="false"
+27        android:fullBackupContent="@xml/backup_rules"
+27-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:14:9-54
+28        android:icon="@mipmap/ic_launcher"
+28-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:15:9-43
+29        android:label="@string/app_name"
+29-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:16:9-41
+30        android:networkSecurityConfig="@xml/network_security_config"
+30-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:17:9-69
+31        android:roundIcon="@mipmap/ic_launcher_round"
+31-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:18:9-54
+32        android:supportsRtl="true"
+32-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:19:9-35
+33        android:testOnly="true"
+34        android:theme="@style/Theme.HackatonApp"
+34-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:20:9-49
+35        android:usesCleartextTraffic="true" >
+35-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:21:9-44
+36        <activity
+36-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:23:9-35:20
+37            android:name="ru.nsu.hackatonapp.activities.MainActivity"
+37-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:24:13-52
+38            android:exported="true"
+38-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:25:13-36
+39            android:screenOrientation="portrait" >
+39-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:26:13-49
+40            <intent-filter>
+40-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:27:13-31:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:28:17-69
+41-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:28:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:30:17-77
+43-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:30:27-74
+44            </intent-filter>
+45
+46            <meta-data
+46-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:32:13-34:36
+47                android:name="android.app.lib_name"
+47-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:33:17-52
+48                android:value="" />
+48-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:34:17-33
+49        </activity>
+50        <activity
+50-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:36:9-39:51
+51            android:name="ru.nsu.hackatonapp.activities.RegistrationActivity"
+51-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:37:13-60
+52            android:exported="true"
+52-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:38:13-36
+53            android:screenOrientation="portrait" />
+53-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:39:13-49
+54        <activity
+54-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:40:9-43:51
+55            android:name="ru.nsu.hackatonapp.activities.RestorePasswordActivity"
+55-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:41:13-63
+56            android:exported="true"
+56-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:42:13-36
+57            android:screenOrientation="portrait" />
+57-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:43:13-49
+58        <activity
+58-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:44:9-47:51
+59            android:name="ru.nsu.hackatonapp.activities.CardsActivity"
+59-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:45:13-53
+60            android:exported="true"
+60-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:46:13-36
+61            android:screenOrientation="portrait" />
+61-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:47:13-49
+62        <activity
+62-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:48:9-51:51
+63            android:name="ru.nsu.hackatonapp.activities.CreateCardActivity"
+63-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:49:13-58
+64            android:exported="true"
+64-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:50:13-36
+65            android:screenOrientation="portrait" />
+65-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:51:13-49
+66        <activity
+66-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:52:9-55:51
+67            android:name="ru.nsu.hackatonapp.activities.BarcodeScannerActivity"
+67-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:53:13-62
+68            android:exported="true"
+68-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:54:13-36
+69            android:screenOrientation="portrait" />
+69-->/home/l3xxxa/Documents/hackaton/app/src/main/AndroidManifest.xml:55:13-49
+70
+71        <service
+71-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/1d16aca0e05cad80d0c5505b512453f1/transformed/play-services-mlkit-barcode-scanning-18.0.0/AndroidManifest.xml:9:9-15:19
+72            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+72-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/1d16aca0e05cad80d0c5505b512453f1/transformed/play-services-mlkit-barcode-scanning-18.0.0/AndroidManifest.xml:10:13-91
+73            android:directBootAware="true"
+73-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:17:13-43
+74            android:exported="false" >
+74-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/1d16aca0e05cad80d0c5505b512453f1/transformed/play-services-mlkit-barcode-scanning-18.0.0/AndroidManifest.xml:11:13-37
+75            <meta-data
+75-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/1d16aca0e05cad80d0c5505b512453f1/transformed/play-services-mlkit-barcode-scanning-18.0.0/AndroidManifest.xml:12:13-14:85
+76                android:name="com.google.firebase.components:com.google.mlkit.vision.barcode.internal.BarcodeRegistrar"
+76-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/1d16aca0e05cad80d0c5505b512453f1/transformed/play-services-mlkit-barcode-scanning-18.0.0/AndroidManifest.xml:13:17-120
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.android.gms:play-services-mlkit-barcode-scanning:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/1d16aca0e05cad80d0c5505b512453f1/transformed/play-services-mlkit-barcode-scanning-18.0.0/AndroidManifest.xml:14:17-82
+78            <meta-data
+78-->[com.google.mlkit:vision-common:17.0.0] /home/l3xxxa/.gradle/caches/transforms-3/e6bc574affd3d23e23ea02a1a94b8185/transformed/vision-common-17.0.0/AndroidManifest.xml:12:13-14:85
+79                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+79-->[com.google.mlkit:vision-common:17.0.0] /home/l3xxxa/.gradle/caches/transforms-3/e6bc574affd3d23e23ea02a1a94b8185/transformed/vision-common-17.0.0/AndroidManifest.xml:13:17-124
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.mlkit:vision-common:17.0.0] /home/l3xxxa/.gradle/caches/transforms-3/e6bc574affd3d23e23ea02a1a94b8185/transformed/vision-common-17.0.0/AndroidManifest.xml:14:17-82
+81            <meta-data
+81-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:20:13-22:85
+82                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+82-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:21:17-120
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:22:17-82
+84        </service>
+85
+86        <provider
+86-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:9:9-13:38
+87            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+87-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:10:13-78
+88            android:authorities="ru.nsu.hackatonapp.mlkitinitprovider"
+88-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:11:13-69
+89            android:exported="false"
+89-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:12:13-37
+90            android:initOrder="99" />
+90-->[com.google.mlkit:common:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/29feeac04c27c8e05df63962e8fc0474/transformed/common-18.0.0/AndroidManifest.xml:13:13-35
+91
+92        <activity
+92-->[com.google.android.gms:play-services-base:18.0.1] /home/l3xxxa/.gradle/caches/transforms-3/c9363e2b34782f614a5ca81cc427642f/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+93            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+93-->[com.google.android.gms:play-services-base:18.0.1] /home/l3xxxa/.gradle/caches/transforms-3/c9363e2b34782f614a5ca81cc427642f/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+94            android:exported="false"
+94-->[com.google.android.gms:play-services-base:18.0.1] /home/l3xxxa/.gradle/caches/transforms-3/c9363e2b34782f614a5ca81cc427642f/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+95-->[com.google.android.gms:play-services-base:18.0.1] /home/l3xxxa/.gradle/caches/transforms-3/c9363e2b34782f614a5ca81cc427642f/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+96
+97        <meta-data
+97-->[com.google.android.gms:play-services-basement:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/fe3fdbaa032a628e18d6a052cab30ef4/transformed/play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+98            android:name="com.google.android.gms.version"
+98-->[com.google.android.gms:play-services-basement:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/fe3fdbaa032a628e18d6a052cab30ef4/transformed/play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+99            android:value="@integer/google_play_services_version" />
+99-->[com.google.android.gms:play-services-basement:18.0.0] /home/l3xxxa/.gradle/caches/transforms-3/fe3fdbaa032a628e18d6a052cab30ef4/transformed/play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+100
+101        <uses-library
+101-->[androidx.window:window:1.0.0] /home/l3xxxa/.gradle/caches/transforms-3/245bd447ddbb20b59422cfd51ffbfda6/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+102            android:name="androidx.window.extensions"
+102-->[androidx.window:window:1.0.0] /home/l3xxxa/.gradle/caches/transforms-3/245bd447ddbb20b59422cfd51ffbfda6/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+103            android:required="false" />
+103-->[androidx.window:window:1.0.0] /home/l3xxxa/.gradle/caches/transforms-3/245bd447ddbb20b59422cfd51ffbfda6/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+104        <uses-library
+104-->[androidx.window:window:1.0.0] /home/l3xxxa/.gradle/caches/transforms-3/245bd447ddbb20b59422cfd51ffbfda6/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+105            android:name="androidx.window.sidecar"
+105-->[androidx.window:window:1.0.0] /home/l3xxxa/.gradle/caches/transforms-3/245bd447ddbb20b59422cfd51ffbfda6/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+106            android:required="false" />
+106-->[androidx.window:window:1.0.0] /home/l3xxxa/.gradle/caches/transforms-3/245bd447ddbb20b59422cfd51ffbfda6/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+107
+108        <provider
+108-->[androidx.emoji2:emoji2:1.2.0] /home/l3xxxa/.gradle/caches/transforms-3/63f2f8a2fc40d90401067a58848c9c19/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+109            android:name="androidx.startup.InitializationProvider"
+109-->[androidx.emoji2:emoji2:1.2.0] /home/l3xxxa/.gradle/caches/transforms-3/63f2f8a2fc40d90401067a58848c9c19/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+110            android:authorities="ru.nsu.hackatonapp.androidx-startup"
+110-->[androidx.emoji2:emoji2:1.2.0] /home/l3xxxa/.gradle/caches/transforms-3/63f2f8a2fc40d90401067a58848c9c19/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+111            android:exported="false" >
+111-->[androidx.emoji2:emoji2:1.2.0] /home/l3xxxa/.gradle/caches/transforms-3/63f2f8a2fc40d90401067a58848c9c19/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+112            <meta-data
+112-->[androidx.emoji2:emoji2:1.2.0] /home/l3xxxa/.gradle/caches/transforms-3/63f2f8a2fc40d90401067a58848c9c19/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+113                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+113-->[androidx.emoji2:emoji2:1.2.0] /home/l3xxxa/.gradle/caches/transforms-3/63f2f8a2fc40d90401067a58848c9c19/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+114                android:value="androidx.startup" />
+114-->[androidx.emoji2:emoji2:1.2.0] /home/l3xxxa/.gradle/caches/transforms-3/63f2f8a2fc40d90401067a58848c9c19/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+115            <meta-data
+115-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/l3xxxa/.gradle/caches/transforms-3/a3d4c4eb7065d6e20597f0c8a0df107a/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+116                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+116-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/l3xxxa/.gradle/caches/transforms-3/a3d4c4eb7065d6e20597f0c8a0df107a/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+117                android:value="androidx.startup" />
+117-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/l3xxxa/.gradle/caches/transforms-3/a3d4c4eb7065d6e20597f0c8a0df107a/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+118        </provider>
+119
+120        <service
+120-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+121            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+121-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+122            android:exported="false" >
+122-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+123            <meta-data
+123-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+124                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+124-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+125                android:value="cct" />
+125-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /home/l3xxxa/.gradle/caches/transforms-3/fd0b0406b832a38616d6c809b1b776c0/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+126        </service>
+127        <service
+127-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/l3xxxa/.gradle/caches/transforms-3/986868ae08e3cd9e4248ff58cd0c58ee/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+128            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+128-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/l3xxxa/.gradle/caches/transforms-3/986868ae08e3cd9e4248ff58cd0c58ee/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+129            android:exported="false"
+129-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/l3xxxa/.gradle/caches/transforms-3/986868ae08e3cd9e4248ff58cd0c58ee/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+130            android:permission="android.permission.BIND_JOB_SERVICE" >
+130-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/l3xxxa/.gradle/caches/transforms-3/986868ae08e3cd9e4248ff58cd0c58ee/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+131        </service>
+132
+133        <receiver
+133-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/l3xxxa/.gradle/caches/transforms-3/986868ae08e3cd9e4248ff58cd0c58ee/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+134            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+134-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/l3xxxa/.gradle/caches/transforms-3/986868ae08e3cd9e4248ff58cd0c58ee/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
+135            android:exported="false" />
+135-->[com.google.android.datatransport:transport-runtime:2.2.6] /home/l3xxxa/.gradle/caches/transforms-3/986868ae08e3cd9e4248ff58cd0c58ee/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+136    </application>
+137
+138</manifest>
